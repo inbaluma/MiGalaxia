@@ -1,7 +1,15 @@
 import React from "react";
+
+// Componentes
 import Cabecera from "./Components/Cabecera.js";
-import Noticias from "./Components/Noticias.js"
-import Bienvenido from "./Components/Bienvenido.js"
+import Noticias from "./Components/Noticias.js";
+import Bienvenido from "./Components/Bienvenido.js";
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+
+library.add(fas, far);
 
 class App extends React.Component {
   
@@ -13,10 +21,11 @@ class App extends React.Component {
     };
   }
 
-  setPaginaActiva(e) {
-    const nuevaPagina = e.target.getAttribute("data-page");
+  setPaginaActiva(element) {
+    const nuevaPagina = element.getAttribute("data-page");
     this.setState({ pagina: nuevaPagina });
     console.log(nuevaPagina);
+    console.log(element)
   }
 
   render() {
@@ -30,7 +39,7 @@ class App extends React.Component {
         child = <Noticias/>;
       break;
       default:
-        child = null;
+        child = <Bienvenido/>;
     }
     return (
       <>
