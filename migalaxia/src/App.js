@@ -8,6 +8,7 @@ import Bienvenido from "./Components/Bienvenido.js";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
+import FotoDelDia from "./Components/FotoDelDia.js";
 
 library.add(fas, far);
 
@@ -35,6 +36,13 @@ class App extends React.Component {
       case "0":
         child = <Bienvenido/>
         break;
+      case "1":
+        break;
+      case "2":
+        break;
+      case "3":
+        child = <FotoDelDia/>
+        break;
       case "4":
         child = <Noticias/>;
       break;
@@ -48,5 +56,5 @@ class App extends React.Component {
       </>
     )
   }
-} export default App;
+}export default App;
   
