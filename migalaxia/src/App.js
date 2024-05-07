@@ -4,6 +4,8 @@ import React from "react";
 import Cabecera from "./Components/Cabecera.js";
 import Noticias from "./Components/Noticias.js";
 import Bienvenido from "./Components/Bienvenido.js";
+import Aprender from "./Components/Aprender.js";
+import Jugar from "./Components/Jugar.js";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -37,8 +39,10 @@ class App extends React.Component {
         child = <Bienvenido/>
         break;
       case "1":
+        child = <Aprender/>;
         break;
       case "2":
+        child = <Jugar/>;
         break;
       case "3":
         child = <FotoDelDia/>

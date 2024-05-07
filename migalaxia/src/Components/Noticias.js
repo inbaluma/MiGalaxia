@@ -5,7 +5,7 @@ function Noticias() {
     
     return (
         <>
-            <h1>Noticias</h1>
+            <h1 style={{textAlign: "center", fontWeight: "bold"}}>Noticias</h1>
             {element}
         </>
     )

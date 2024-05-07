@@ -48,7 +48,7 @@ function FotoDelDia() {
 
 	return(
 		<div className="text-center">
-			<h1>Foto de {fecha.getDate()}/{fecha.getMonth()+1}/{fecha.getFullYear()}</h1>
+			<h1 style={{fontWeight: "bold"}}>Foto de {fecha.getDate()}/{fecha.getMonth()+1}/{fecha.getFullYear()}</h1>
 			<div className="container">
 				{elementoImagen}
 			</div>
