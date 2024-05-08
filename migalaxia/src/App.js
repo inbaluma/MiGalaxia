@@ -20,15 +20,39 @@ class App extends React.Component {
     super();
 
     this.state = {
-      pagina: "0"
+      pagina: "0",
+      mode: "dark"
     };
+  }
+
+  changeMode(elemento) {
+    const body = document.getElementsByTagName("body")[0];
+    const classList = document.getElementById("cabecera").classList;
+
+    if (this.state.mode === "dark") {
+      this.setState({mode: "light"});
+      body.setAttribute("data-bs-theme", "light");
+      
+      classList.remove("gradient-dark");
+      classList.add("gradient-light");
+
+      elemento.textContent = "Cambiar a modo oscuro";
+    }
+    else {
+      this.setState({mode: "dark"});
+      body.setAttribute("data-bs-theme", "dark");
+      
+      classList.remove("gradient-light");
+      classList.add("gradient-dark");
+
+      elemento.textContent = "Cambiar a modo claro";
+    }
+    
   }
 
   setPaginaActiva(element) {
     const nuevaPagina = element.getAttribute("data-page");
     this.setState({ pagina: nuevaPagina });
-    console.log(nuevaPagina);
-    console.log(element)
   }
 
   render() {

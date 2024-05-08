@@ -11,63 +11,69 @@ function Cabecera(props) {
     }
 
     let element = e.target;
-    let type = element.nodeName; 
+    let type = element.nodeName;
     let i = 0; // Por seguridad
-    while (i < 10 && type !== "A") {
+    while (i < 10 && type !== "A" && type !== "BUTTON") {
+      console.log(element);
       element = element.parentNode;
       type = element.nodeName;
       i++;
-    }
-    
-
+    }  
+    console.log(element);
     element.classList.add("active");
 
     // Avisamos a App
     props.app.setPaginaActiva(element);
   }
 
+  const changeMode = (e) => {
+    props.app.changeMode(e.target);
+  }
+
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark gradient-custom">
-        <div className="container-fluid text-center">
-          <a onClick={setPaginaActiva} className="navbar-brand text-center" href="#" data-page="0">MiGalaxia</a>
+      <nav id="cabecera" className="navbar sticky-top navbar-expand-md gradient-dark">
+        <div className="container-fluid">
+          <a onClick={setPaginaActiva} className="navbar-brand" href="/" data-page="0">MiGalaxia</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             {<FontAwesomeIcon icon="fas fa-bars text-light"/>}
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav" id="nav-list">
+            <ul className="navbar-nav me-auto" id="nav-list">
               <li className="nav-item text-center">
-                <a onClick={setPaginaActiva} className="nav-link" href="#" data-page="1">
-                  <div onClick={setPaginaActiva}>
-                    {<FontAwesomeIcon icon="fa-solid fa-book-open text-light"/>}
+                <button onClick={setPaginaActiva} className="nav-link" href="/" data-page="1">
+                  <div className='nav-icon'>
+                    {<FontAwesomeIcon icon="fas fa-book-open text-light"/>}
                   </div>
-                  Aprender
-                </a>
+                    Aprender
+                </button>
               </li>
               <li className="nav-item text-center">
-                <a onClick={setPaginaActiva} className="nav-link" href="#" data-page="2">
-                  <div>
-                    {<FontAwesomeIcon icon="fa-solid fa-gamepad" text-light/>}
+                <button onClick={setPaginaActiva} className="nav-link" href="/" data-page="2">
+                  <div className='nav-icon'>
+                    {<FontAwesomeIcon icon="fas fa-gamepad"/>}
                   </div>
                   Jugar
-                </a>
+                </button>
               </li>
               <li className="nav-item text-center">
-                <a onClick={setPaginaActiva} className="nav-link" href="#" data-page="3">
-                  <div>
-                    {<FontAwesomeIcon icon="far fa-image"/>}
+                <button onClick={setPaginaActiva} className="nav-link" href="/" data-page="3">
+                  <div className='nav-icon'>
+                    {<FontAwesomeIcon icon="fas fa-image"/>}
                   </div>
                   Foto del día
-                </a>
+                </button>
               </li>
-              <li className="nav-item text-center">
-                <a onClick={setPaginaActiva} className="nav-link" href="#" data-page="4">
-                  <div>
-                    {<FontAwesomeIcon icon="fa-regular fa-newspaper" />}
+              <li className="nav-item text-center justify-content-center">
+                <button onClick={setPaginaActiva} className="nav-link" data-page="4">
+                  <div className='nav-icon'>
+                    {<FontAwesomeIcon icon="fas fa-newspaper" />}
                   </div>
                   Noticias
-                </a>
+                </button>
               </li>
             </ul>
+
+              <button className='btn btn-sm btn-secondary' onClick={changeMode}>Cambiar a modo claro</button>
           </div>
         </div>
       </nav>
