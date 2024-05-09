@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Cabecera.css';
-import { icon } from '@fortawesome/fontawesome-svg-core';
+
 function Cabecera(props) {
 
   // Construimos la lista del navbar
@@ -22,7 +22,7 @@ function Cabecera(props) {
 
     let li;
     if (path.startsWith(pagina.path)) {
-      li = <li className="nav-item text-center">
+      li = <li key={i} className="nav-item text-center">
         <a className="nav-link active" href={pagina.path}>
           {icono}
           {pagina.nombre}
@@ -30,7 +30,7 @@ function Cabecera(props) {
       </li>
     }
     else {
-      li = <li className="nav-item text-center">
+      li = <li key={i} className="nav-item text-center">
       <a className="nav-link" href={pagina.path}>
         {icono}
         {pagina.nombre}

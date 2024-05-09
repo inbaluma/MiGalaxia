@@ -43,34 +43,44 @@ class App extends React.Component {
       element: <FotoDelDia/>
     },
     {
-      path: "/noticias",
+      path: "/noticias/*",
       element: <Noticias/>
     }
   ]);
 
   changeMode(elemento) {
-    const body = document.getElementsByTagName("body")[0];
-    const classList = document.getElementById("cabecera").classList;
-
-    if (this.state.mode === "dark") {
+    const prevMode = this.state.mode;
+    let mode;
+    if (prevMode === "dark") {
       this.setState({mode: "light"});
-      body.setAttribute("data-bs-theme", "light");
-      
-      classList.remove("gradient-dark");
-      classList.add("gradient-light");
-
-      elemento.textContent = "Cambiar a modo oscuro";
+      mode = "light";
     }
     else {
-      this.setState({mode: "dark"});
-      body.setAttribute("data-bs-theme", "dark");
-      
-      classList.remove("gradient-light");
-      classList.add("gradient-dark");
-
-      elemento.textContent = "Cambiar a modo claro";
+      this.setState({mode: "dark"})
+      mode = "dark";
     }
-    
+
+    const body = document.getElementsByTagName("body")[0];    
+    body.setAttribute("data-bs-theme", mode);
+
+    this.changeModeClassName(prevMode, mode, "gradient-");
+
+    //const textNormal = document.getElementsByClassName("text-normal-"+this.state.mode);
+    this.changeModeClassName(prevMode, mode, "text-normal-");
+    this.changeModeClassName(prevMode, mode, "text-secondary-");
+    this.changeModeClassName(prevMode, mode, "link-secondary-");
+
+
+  }
+
+  changeModeClassName(prevMode, mode, className) {
+    const elements = document.getElementsByClassName(className+prevMode);
+
+    for(let i = 0; i < elements.length; i++) {
+      const classList = elements[i].classList;
+      classList.add(className+mode);
+      classList.remove(className+prevMode);
+    }
   }
 
   render() {
