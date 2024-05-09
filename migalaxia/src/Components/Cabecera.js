@@ -13,13 +13,11 @@ function Cabecera(props) {
     let element = e.target;
     let type = element.nodeName;
     let i = 0; // Por seguridad
-    while (i < 10 && type !== "A" && type !== "BUTTON") {
-      console.log(element);
+    while (i < 10 && type !== "BUTTON") {
       element = element.parentNode;
       type = element.nodeName;
       i++;
-    }  
-    console.log(element);
+    }
     element.classList.add("active");
 
     // Avisamos a App

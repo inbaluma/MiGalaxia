@@ -1,15 +1,20 @@
 class Noticia {
 
-    constructor(nombre, img, contenido) {
+    constructor(id, nombre, img, descripcion_imagen, secciones) {
+
+        this.id = id;
 
         if (nombre == null) this.nombre = "Noticia sin nombre";
         else this.nombre = nombre;
 
-        if (img == null)this.img = "sistemaSolar.jpg";
+        if (img == null) this.img = "sistemaSolar.jpg";
         else this.img = img;
 
-        if (contenido == null) this.contenido = "Sin contenido";
-        else this.contenido = contenido;
+        if (descripcion_imagen == null) this.descripcion_imagen = "";
+        else this.descripcion_imagen = descripcion_imagen;
+
+        if (secciones == null) this.secciones = [];
+        else this.secciones = secciones;
 
         this.state = {
             // 0: neutral, 1: like, -1: dislike
@@ -57,6 +62,18 @@ class Noticia {
             this.state.user_feedback = 0;
         }
         // En otro caso no hacemos nada
+    }
+
+    getLikes() {
+        return this.state.likes;
+    }
+
+    getDislikes() {
+        return this.state.dislikes;
+    }
+
+    getUserFeedback() {
+        return this.state.user_feedback;
     }
 
 }
