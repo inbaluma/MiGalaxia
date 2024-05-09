@@ -1,28 +1,46 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Cabecera.css';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 function Cabecera(props) {
 
-  const setPaginaActiva = (e) => {
-    const active = document.getElementsByClassName("active");
+  // Construimos la lista del navbar
+  const ul = <ul className="navbar-nav me-auto" children={[]}></ul>
 
-    // Eliminamos la clase active de los elementos activos
-    for(let i = 0; i < active.length; i++) {
-      active[i].classList.remove("active");
+  const path = props.path;
+  const paginas = [
+    {nombre: "Aprender", path: "/aprender", icono: "fas fa-book-open text-light"},
+    {nombre: "Jugar", path: "/jugar", icono: "fas fa-gamepad text-light"},
+    {nombre: "Foto del día", path: "/foto", icono: "fas fa-image text-light"},
+    {nombre: "Noticias", path: "/noticias", icono: "fas fa-newspaper text-light"}
+  ];
+   
+  for (let i = 0; i < paginas.length; i++) {
+    const pagina = paginas[i];
+    const icono = <div className='nav-icon'>
+      {<FontAwesomeIcon icon={pagina.icono}/>}
+    </div>
+
+    let li;
+    if (path.startsWith(pagina.path)) {
+      li = <li className="nav-item text-center">
+        <a className="nav-link active" href={pagina.path}>
+          {icono}
+          {pagina.nombre}
+        </a>
+      </li>
+    }
+    else {
+      li = <li className="nav-item text-center">
+      <a className="nav-link" href={pagina.path}>
+        {icono}
+        {pagina.nombre}
+      </a>
+    </li>
     }
 
-    let element = e.target;
-    let type = element.nodeName;
-    let i = 0; // Por seguridad
-    while (i < 10 && type !== "BUTTON") {
-      element = element.parentNode;
-      type = element.nodeName;
-      i++;
-    }
-    element.classList.add("active");
-
-    // Avisamos a App
-    props.app.setPaginaActiva(element);
+    ul.props.children.push(li);
   }
+  
 
   const changeMode = (e) => {
     props.app.changeMode(e.target);
@@ -31,47 +49,13 @@ function Cabecera(props) {
     return (
       <nav id="cabecera" className="navbar sticky-top navbar-expand-md gradient-dark">
         <div className="container-fluid">
-          <a onClick={setPaginaActiva} className="navbar-brand" href="/" data-page="0">MiGalaxia</a>
+          <a className="navbar-brand" href="/" data-page="0">MiGalaxia</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             {<FontAwesomeIcon icon="fas fa-bars text-light"/>}
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav me-auto" id="nav-list">
-              <li className="nav-item text-center">
-                <button onClick={setPaginaActiva} className="nav-link" href="/" data-page="1">
-                  <div className='nav-icon'>
-                    {<FontAwesomeIcon icon="fas fa-book-open text-light"/>}
-                  </div>
-                    Aprender
-                </button>
-              </li>
-              <li className="nav-item text-center">
-                <button onClick={setPaginaActiva} className="nav-link" href="/" data-page="2">
-                  <div className='nav-icon'>
-                    {<FontAwesomeIcon icon="fas fa-gamepad"/>}
-                  </div>
-                  Jugar
-                </button>
-              </li>
-              <li className="nav-item text-center">
-                <button onClick={setPaginaActiva} className="nav-link" href="/" data-page="3">
-                  <div className='nav-icon'>
-                    {<FontAwesomeIcon icon="fas fa-image"/>}
-                  </div>
-                  Foto del día
-                </button>
-              </li>
-              <li className="nav-item text-center justify-content-center">
-                <button onClick={setPaginaActiva} className="nav-link" data-page="4">
-                  <div className='nav-icon'>
-                    {<FontAwesomeIcon icon="fas fa-newspaper" />}
-                  </div>
-                  Noticias
-                </button>
-              </li>
-            </ul>
-
-              <button className='btn btn-sm btn-secondary' onClick={changeMode}>Cambiar a modo claro</button>
+            {ul}
+            <button className='btn btn-sm btn-secondary' onClick={changeMode}>Cambiar a modo claro</button>
           </div>
         </div>
       </nav>
