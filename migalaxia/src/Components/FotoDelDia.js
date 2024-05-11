@@ -34,7 +34,6 @@ function FotoDelDia() {
 						<button
 							id="botonDescarga"
 							className="btn btn-secondary my-3 btn-sm"
-							onClick={manejarDescarga}
 						>
 							Descargar foto
 						</button>
