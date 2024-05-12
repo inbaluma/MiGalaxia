@@ -1,9 +1,52 @@
 function Juegos() {
-    return (
-      <div>
-        <h1 style={{textAlign: "center", fontWeight: "bold"}}>Juegos</h1>        
+  return (
+    <div>
+      <h1 style={{textAlign: "center", fontWeight: "bold"}}>Juegos</h1>     
+      <div className="row">
+        <div className="col-12 col-md-6 col-lg-6 mb-3">
+          <div className="card">
+            <img src="/logotrivia.jpg" className="card-img-top" style={{ height: "200px", objectFit: "cover" }} alt="..." />
+            <div className="card-body">
+              <h5 className="card-title">Trivia</h5>
+              <p className="card-text">¡Desafía tu conocimiento del espacio con nuestro juego de trivial! Desde planetas hasta agujeros negros, ¡prepárate para un viaje cósmico lleno de preguntas fascinantes!</p>
+              <a href="#" className="btn btn-primary">Ir a Trivia</a>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-md-6 col-lg-6 mb-3">
+          <div className="card">
+            <img src="/fotoAhorcado.png" className="card-img-top" style={{ height: "200px", objectFit: "cover" }} alt="..." />
+            <div className="card-body">
+              <h5 className="card-title">Ahorcado</h5>
+              <p className="card-text">¡Adivina la palabra secreta del cosmos antes de que se pierda en el vacío del espacio! Desafía tus habilidades con un giro cósmico del clásico juego del ahorcado."</p>
+              <a href="#" className="btn btn-primary">Ir a Ahorcado</a>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-md-6 col-lg-6 mb-3">
+          <div className="card">
+            <img src="/pasapalabraEspacio.jpg" className="card-img-top" style={{ height: "200px", objectFit: "cover" }} alt="..." />
+            <div className="card-body">
+              <h5 className="card-title">Pasapalabra Espacial</h5>
+              <p className="card-text">¡Desafía tus conocimientos del espacio con un emocionante pasapalabra galáctico! ¡Letras, palabras y conceptos estelares te esperan en este desafío cósmico  </p>
+              <a href="#" className="btn btn-primary">Ir a Pasapalabra Espacial</a>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-md-6 col-lg-6 mb-3">
+          <div className="card">
+            <img src="/planetasmemoria.jpg" className="card-img-top" style={{ height: "200px", objectFit: "cover" }} alt="..." />
+            <div className="card-body">
+              <h5 className="card-title">Memoria Planetaria</h5>
+              <p className="card-text">¡Descubre el universo mientras emparejas cartas de astronautas, planetas y naves espaciales en este juego de memoria galáctica! ¡Encuentra las parejas antes de que se pierdan en el espacio!</p>
+              <a href="#" className="btn btn-primary">Ir a Memoria Planetaria</a>
+            </div>
+          </div>
+        </div>
       </div>
-    );
-  }
-  
-  export default Juegos;
+    </div>
+  );
+}
+
+export default Juegos;
+
