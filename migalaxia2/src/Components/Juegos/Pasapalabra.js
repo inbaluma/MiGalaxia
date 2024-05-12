@@ -5,6 +5,7 @@ import Palabra from "../../model/PalabrasJuego";
 import SetPalabras from "../../model/SetPalabras";
 
 import "../../index.css"
+import Navigation from "../Navigation";
 
 function Pasapalabra() {
 
@@ -107,7 +108,8 @@ function Pasapalabra() {
 
 
     return (
-        <div>
+        <div className="mx-3">
+            <Navigation actual="Pasapalabra" paginas={[{nombre: "Jugar", path:"/jugar"}]}/>
             <h1 className="titulo mb-3">Pasapalabra</h1>
             <div className="card mx-3">
                 <div className="card-body">
