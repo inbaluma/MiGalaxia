@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Juegos() {
   return (
     <div>
@@ -29,7 +31,7 @@ function Juegos() {
             <div className="card-body">
               <h5 className="card-title">Pasapalabra Espacial</h5>
               <p className="card-text">¡Desafía tus conocimientos del espacio con un emocionante pasapalabra galáctico! ¡Letras, palabras y conceptos estelares te esperan en este desafío cósmico  </p>
-              <a href="#" className="btn btn-primary">Ir a Pasapalabra Espacial</a>
+              <Link className="btn btn-primary" to="pasapalabra">Ir a Pasapalabra Espacial</Link>
             </div>
           </div>
         </div>

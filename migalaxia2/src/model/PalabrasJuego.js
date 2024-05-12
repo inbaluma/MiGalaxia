@@ -1,11 +1,18 @@
 class Palabra {
     
-    constructor(letra, palabra, definicion) {
+    constructor(letra, palabra, definicion, empieza) {
         this.letra = letra.toUpperCase();
 
         this.palabra = this.minusculasSinTildes(palabra);
 
         this.definicion = definicion;
+
+        if (empieza == null) {
+            this.empieza = true;
+        }
+        else {
+            this.empieza = false;
+        }
 
         this.intentos = 3;
 
@@ -14,6 +21,18 @@ class Palabra {
 
     getLetra() {
         return this.letra;
+    }
+
+    getHeading() {
+        let heading;
+        if (this.empieza) {
+            heading = "Empieza por la '" + this.letra + "'";
+        }
+        else {
+            heading = "Contiene la '" + this.letra + "'";
+        }
+
+        return heading;
     }
 
     getPalabra() {

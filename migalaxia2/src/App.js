@@ -41,7 +41,7 @@ const router = createBrowserRouter([
                 element: <Noticias/>
             },
             {
-                path: "juegos/pasapalabra",
+                path: "jugar/pasapalabra",
                 element: <Pasapalabra/>
             }
         ]
