@@ -11,7 +11,7 @@ function Juegos() {
             <div className="card-body">
               <h5 className="card-title">Trivia</h5>
               <p className="card-text">¡Desafía tu conocimiento del espacio con nuestro juego de trivial! Desde planetas hasta agujeros negros, ¡prepárate para un viaje cósmico lleno de preguntas fascinantes!</p>
-              <a href="#" className="btn btn-primary">Ir a Trivia</a>
+              <Link className="btn btn-primary">Ir a Trivia</Link>
             </div>
           </div>
         </div>
