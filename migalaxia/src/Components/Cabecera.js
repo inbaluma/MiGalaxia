@@ -4,8 +4,7 @@ import './Cabecera.css';
 function Cabecera(props) {
 
   // Construimos la lista del navbar
-  const ul = <ul className="navbar-nav me-auto" children={[]}></ul>
-
+  const componentes = [];
   const path = props.path;
   const paginas = [
     {nombre: "Aprender", path: "/aprender", icono: "fas fa-book-open text-light"},
@@ -21,9 +20,17 @@ function Cabecera(props) {
     </div>
 
     let li;
-    if (path.startsWith(pagina.path)) {
+    if (path === pagina.path) {
       li = <li key={i} className="nav-item text-center">
-        <a className="nav-link active" href={pagina.path}>
+          <div className="nav-link active" aria-current="page">
+          {icono}
+          {pagina.nombre}
+        </div>
+      </li>
+    }
+    else if (path.startsWith(pagina.path)) {
+      li = <li key={i} className="nav-item text-center">
+          <a className="nav-link active" href={pagina.path}>
           {icono}
           {pagina.nombre}
         </a>
@@ -31,15 +38,16 @@ function Cabecera(props) {
     }
     else {
       li = <li key={i} className="nav-item text-center">
-      <a className="nav-link" href={pagina.path}>
+        <a className="nav-link" href={pagina.path}>
         {icono}
         {pagina.nombre}
       </a>
     </li>
     }
-
-    ul.props.children.push(li);
+    componentes.push(li);
   }
+
+  const ul = <ul className="navbar-nav me-auto">{componentes}</ul>
   
 
   const changeMode = (e) => {
@@ -61,5 +69,4 @@ function Cabecera(props) {
       </nav>
     )
 }
-
 export default Cabecera;

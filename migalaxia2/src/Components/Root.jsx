@@ -1,39 +1,50 @@
-import Cabecera from "./Cabecera.js"
+import Cabecera from "./Cabecera.js";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
 
 const Root = () => {
-    const [mode, setMode] = useState("dark");
-    function changeMode(elemento) {
-        const body = document.getElementsByTagName("body")[0];
-        const classList = document.getElementById("cabecera").classList;
+  const [mode, setMode] = useState("dark");
 
-        if (mode === "dark") {
-            setMode("light");
-            body.setAttribute("data-bs-theme", "light");
-      
-            classList.remove("gradient-dark");
-            classList.add("gradient-light");
+  function changeMode(elemento) {
+    let currentMode;
+    let texto;
+    if (mode === "dark") {
+      setMode("light");
+      currentMode = "light";
+      texto = "Cambiar a modo oscuro";
+    } else {
+      setMode("dark");
+      currentMode = "dark";
+      texto = "Cambiar a modo claro";
+    }
 
-            elemento.textContent = "Cambiar a modo oscuro";
-        }
-        else {
-            setMode("dark")
-            body.setAttribute("data-bs-theme", "dark");
-      
-            classList.remove("gradient-light");
-            classList.add("gradient-dark");
+    const body = document.getElementsByTagName("body")[0];
+    body.setAttribute("data-bs-theme", currentMode);
 
-            elemento.textContent = "Cambiar a modo claro";
-        }
-    } 
-    
-    return (
-      <>
-        <Cabecera changeMode={changeMode}/>
-        <Outlet />
-      </>
-    );
-}
+    changeModeClassName(mode, currentMode, "gradient-");
+    changeModeClassName(mode, currentMode, "text-normal-");
+    changeModeClassName(mode, currentMode, "text-secondary-");
+    changeModeClassName(mode, currentMode, "link-secondary-");
+
+    return texto;
+  }
+
+  function changeModeClassName(prevMode, mode, className) {
+    const elements = document.getElementsByClassName(className+prevMode);
+
+    for(let i = 0; i < elements.length; i++) {
+      const classList = elements[i].classList;
+      classList.add(className+mode);
+      classList.remove(className+prevMode);
+    }
+  }
+
+  return (
+    <>
+      <Cabecera changeMode={changeMode} />
+      <Outlet />
+    </>
+  );
+};
 
 export default Root;

@@ -7,11 +7,11 @@ import Bienvenido from "./Components/Bienvenido.js";
 import Aprender from "./Components/Aprender.js";
 import Jugar from "./Components/Jugar.js";
 import FotoDelDia from "./Components/FotoDelDia.js";
+import Pasapalabra from "./Components/Juegos/Pasapalabra.js";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
-import EmblaCarousel from "./Components/Aprender/EmblaCarousel.jsx";
 
 library.add(fas, far);
 
@@ -39,6 +39,10 @@ const router = createBrowserRouter([
             {
                 path: "noticias",
                 element: <Noticias/>
+            },
+            {
+                path: "juegos/pasapalabra",
+                element: <Pasapalabra/>
             }
         ]
     },

@@ -8,8 +8,7 @@ function NoticiaCompleta(props) {
 
     let introduccion = <section key="0" children={[]}></section>;
 
-    let secciones = <div children={[]}></div>;
-    
+    const componentes = [];
     for(let i = 0; i < noticia.secciones.length; i++) {
         const seccion = noticia.secciones[i];
         if (seccion.titulo != null && seccion.titulo !== '') {
@@ -17,23 +16,24 @@ function NoticiaCompleta(props) {
                 <h2>{seccion.titulo}</h2>
                 <p>{seccion.contenido}</p>
             </section>
-            secciones.props.children.push(seccionHTML);
+            componentes.push(seccionHTML);
         }
         else {
             const parrafo = <p key={i}>{seccion.contenido}</p>
-            if (secciones.props.children.length === 0) {
+            if (componentes.length === 0) {
                 // Introducimos en la introduccion
                 introduccion.props.children.push(parrafo);
-                secciones.props.children.push(introduccion);
+                componentes.push(introduccion);
             }
             else {
                 // Introducimos a la ultima sesion
-                const children = secciones.props.children;
-                const seccion = children[children.length -1];
+                const seccion = componentes[componentes.length -1];
                 seccion.props.children.push(parrafo);
             }
-        }     
+        } 
     }
+
+    const secciones = <>{componentes}</>
 
     return (
         <div className="mx-3">

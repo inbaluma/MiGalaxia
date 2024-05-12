@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom/client'
 import EmblaCarousel from './Aprender/EmblaCarousel'
 import Footer from './Aprender/Footer'
 
-import './Aprender/base.css'
+// ESTE IMPORT CAMBIA EL FORMATO DE LA PAGINA ENTERA!
+//import './Aprender/base.css'
 import './Aprender/sandbox.css'
 import './Aprender/embla.css'
 

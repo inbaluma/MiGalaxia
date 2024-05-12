@@ -1,12 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Cabecera.css';
-import { icon } from '@fortawesome/fontawesome-svg-core';
 import { useLocation, Link } from "react-router-dom";
 
 function Cabecera(props) {
 
     // Construimos la lista del navbar
-    const ul = <ul className="navbar-nav me-auto" children={[]}></ul>
+    const componentes = [];
 
     const location = useLocation();
     const path = location.pathname;
@@ -25,7 +24,7 @@ function Cabecera(props) {
 
         let li;
         if (path.startsWith(pagina.path)) {
-            li = <li className="nav-item text-center">
+            li = <li key={i} className="nav-item text-center">
                      <Link className="nav-link active" to={pagina.path}>
                          {icono}
                          {pagina.nombre}
@@ -33,7 +32,7 @@ function Cabecera(props) {
                  </li>
         }
         else {
-            li = <li className="nav-item text-center">
+            li = <li key={i} className="nav-item text-center">
                      <Link className="nav-link" to={pagina.path}>
                          {icono}
                          {pagina.nombre}
@@ -41,12 +40,17 @@ function Cabecera(props) {
                  </li>
         }
 
-        ul.props.children.push(li);
+        componentes.push(li);
     }
-  
+    
+    
+    const ul = <ul className="navbar-nav me-auto">
+        {componentes}
+    </ul>
 
     const changeMode = (e) => {
-        props.changeMode(e.target);
+        const text = props.changeMode(e.target);
+        e.target.innerText = text;
     }
 
     return (

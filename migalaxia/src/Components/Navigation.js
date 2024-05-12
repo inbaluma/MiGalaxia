@@ -11,13 +11,28 @@ import '../index.css';
 
 function Navigation(props) {
 
-    const navigation = <p className="text-secondary-dark" children={[]}></p>
+    const componentes = [];
     for (let i = 0; i < props.paginas.length; i++) {
         const pagina = props.paginas[i];
-        navigation.props.children.push(<a key={i} className='link-secondary-dark' href={pagina.path}>{pagina.nombre}</a>)
-        navigation.props.children.push(" > ");
+        componentes.push(
+            <li key={i} className="breadcrumb-item">
+                <a className='link-secondary-dark' href={pagina.path}>
+                    {pagina.nombre}
+                </a>
+            </li>
+        );
     }
-    navigation.props.children.push(props.actual);
+    componentes.push(
+        <li key={10} className="breadcrumb-item active" aria-current="page">
+            {props.actual}
+        </li>
+    );
+
+    const navigation = <nav aria-label="breadcrumb">
+        <ol className='breadcrumb'>
+            {componentes}
+        </ol>
+    </nav>
 
     return (
         <div className="mt-2">
