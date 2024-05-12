@@ -2,16 +2,29 @@ import { width } from "@fortawesome/free-regular-svg-icons/faAddressBook";
 import React from "react";
 import ReactDOM from 'react-dom/client'
 import EmblaCarousel from './Aprender/EmblaCarousel'
-import Footer from './Aprender/Footer'
+
 
 // ESTE IMPORT CAMBIA EL FORMATO DE LA PAGINA ENTERA!
 //import './Aprender/base.css'
 import './Aprender/sandbox.css'
 import './Aprender/embla.css'
 
+import sunImage from './Aprender/sun.jpg';
+import mercurioImage from './Aprender/mercurio.jpg';
+
 const OPTIONS = {}
-const SLIDE_COUNT = 10
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+//const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+
+const SLIDES = [
+  {
+    imageUrl: sunImage,
+    path: "/infoSun",
+  },
+  {
+    imageUrl: mercurioImage,
+    path: "/infoMercury"
+  }
+]
 
 function ComponenteConImagen() {
     return (
@@ -21,7 +34,6 @@ function ComponenteConImagen() {
         <h3>Navega entre los planetas</h3>
         <div style={{marginTop: "50px"}}></div>
         <EmblaCarousel slides={SLIDES} options={OPTIONS} />
-        <Footer />
       </div>
     );
   }

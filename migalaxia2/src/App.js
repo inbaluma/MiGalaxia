@@ -11,6 +11,8 @@ import Pasapalabra from "./Components/Juegos/Pasapalabra.js";
 import Trivia from "./Components/Juegos/Trivia.js";
 import Memoria from "./Components/Juegos/Memoria.js";
 import Ahorcado from "./Components/Juegos/Ahorcado.js";
+import Sun from "./Components/Aprender/Sun.jsx";
+import Mercury  from "./Components/Aprender/Mercury.jsx";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
             {
                 path: "aprender",
                 element: <Aprender/>
+            },
+            {
+                path: "infosun",
+                element: <Sun/>
+            },
+            {
+                path: "infoMercury",
+                element: <Mercury/>
             },
             {
                 path: "jugar",
