@@ -9,6 +9,8 @@ import Jugar from "./Components/Jugar.js";
 import FotoDelDia from "./Components/FotoDelDia.js";
 import Pasapalabra from "./Components/Juegos/Pasapalabra.js";
 import Trivia from "./Components/Juegos/Trivia.js";
+import Memoria from "./Components/Juegos/Memoria.js";
+import Ahorcado from "./Components/Juegos/Ahorcado.js";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -48,6 +50,14 @@ const router = createBrowserRouter([
             {
                 path: "jugar/trivia",
                 element: <Trivia/>
+            },
+            {
+                path: "jugar/Memoria",
+                element: <Memoria/>
+            },
+            {
+                path: "jugar/Ahorcado",
+                element: <Ahorcado/>
             }
 
         ]

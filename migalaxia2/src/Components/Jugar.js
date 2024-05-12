@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+
+
 function Juegos() {
   return (
     <div>
@@ -11,7 +13,7 @@ function Juegos() {
             <div className="card-body">
               <h5 className="card-title">Trivia</h5>
               <p className="card-text">¡Desafía tu conocimiento del espacio con nuestro juego de trivial! Desde planetas hasta agujeros negros, ¡prepárate para un viaje cósmico lleno de preguntas fascinantes!</p>
-              <Link className="btn btn-primary">Ir a Trivia</Link>
+              <Link className="btn btn-primary" to="trivia">Ir a Trivia</Link>
             </div>
           </div>
         </div>
@@ -21,7 +23,7 @@ function Juegos() {
             <div className="card-body">
               <h5 className="card-title">Ahorcado</h5>
               <p className="card-text">¡Adivina la palabra secreta del cosmos antes de que se pierda en el vacío del espacio! Desafía tus habilidades con un giro cósmico del clásico juego del ahorcado."</p>
-              <a href="#" className="btn btn-primary">Ir a Ahorcado</a>
+              <Link className="btn btn-primary" to="Ahorcado">Ir a Ahorcado</Link>
             </div>
           </div>
         </div>
@@ -41,7 +43,7 @@ function Juegos() {
             <div className="card-body">
               <h5 className="card-title">Memoria Planetaria</h5>
               <p className="card-text">¡Descubre el universo mientras emparejas cartas de astronautas, planetas y naves espaciales en este juego de memoria galáctica! ¡Encuentra las parejas antes de que se pierdan en el espacio!</p>
-              <a href="#" className="btn btn-primary">Ir a Memoria Planetaria</a>
+              <Link className="btn btn-primary" to="Memoria">Ir a Memoria Planetaria</Link>
             </div>
           </div>
         </div>
