@@ -13,6 +13,7 @@ import Memoria from "./Components/Juegos/Memoria.js";
 import Ahorcado from "./Components/Juegos/Ahorcado.js";
 import Sun from "./Components/Aprender/Sun.jsx";
 import Mercury  from "./Components/Aprender/Mercury.jsx";
+import Venus from "./Components/Aprender/Venus.jsx"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: "infoMercury",
                 element: <Mercury/>
+            },
+            {
+                path: "infoVenus",
+                element: <Venus/>
             },
             {
                 path: "jugar",
