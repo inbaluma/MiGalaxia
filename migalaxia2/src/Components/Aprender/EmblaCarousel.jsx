@@ -5,11 +5,13 @@ import { Link } from 'react-router-dom';
 import sunImage from './sun.jpg';
 import mercurioImage from './mercurio.jpg';
 import venusImage from './Venus.jpg';
+import earthImage from './Earth.jpg';
 
 const slides = [
   { imageUrl: sunImage, planetName: 'Sol', path: '/sol'},
   {imageUrl: mercurioImage, planetName: 'Mercurio', path: '/mercurio' },
-  {imageUrl: venusImage, planetName: 'Venus', path: '/venus'}
+  {imageUrl: venusImage, planetName: 'Venus', path: '/venus'},
+  {imageUrl: earthImage, planetName: 'Tierra', path: '/earth'}
 ];
 
 const EmblaCarousel = (props) => {
@@ -49,8 +51,7 @@ const EmblaCarousel = (props) => {
         <div className="embla__container">
           {slides.map((slide,index) => (
             <div className="embla__slide" key={index} style={{maxWidth: "400px"}}>
-              <img src={slide.imageUrl} alt={`Slide ${index + 1}`} style={{ width: '100%' }} />
-               <h3 style={{marginTop: '100px', color: 'white'}}>{slide.planetName}</h3>
+              <img src={slide.imageUrl} alt={`Slide ${index + 1}`} style={{ width: '100%', height: '400px' }} />
               <Link to= {slide.path} style= {{display: "block"}}>Más información</Link>
             </div>
           ))}

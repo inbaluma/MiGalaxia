@@ -12,6 +12,7 @@ import './Aprender/embla.css'
 import sunImage from './Aprender/sun.jpg';
 import mercurioImage from './Aprender/mercurio.jpg';
 import venusImage from './Aprender/Venus.jpg'
+import earthImage from './Aprender/Earth.jpg'
 
 const OPTIONS = {}
 //const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
@@ -28,6 +29,10 @@ const SLIDES = [
   {
     imageUrl: venusImage,
     path: "/infoVenus"
+  },
+  {
+    imageUrl: earthImage,
+    path: "/infoEarth"
   }
 ]
 
