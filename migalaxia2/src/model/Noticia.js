@@ -1,21 +1,13 @@
 class Noticia {
 
-    constructor(id, nombre, img, descripcion_imagen, secciones) {
-
-        this.id = id;
-
-        if (nombre == null) this.nombre = "Noticia sin nombre";
-        else this.nombre = nombre;
-
-        if (img == null) this.img = "sistemaSolar.jpg";
-        else this.img = img;
-
-        if (descripcion_imagen == null) this.descripcion_imagen = "";
-        else this.descripcion_imagen = descripcion_imagen;
-
-        if (secciones == null) this.secciones = [];
-        else this.secciones = secciones;
-
+    constructor(index, elemento) {
+        index===0 ? console.log(elemento) : console.log();
+        this.id = index;
+        this.titulo = elemento.title;
+        this.img = elemento.urlToImage;
+        this.descripcion_imagen = "";
+        this.secciones = [{contenido: elemento.description}];
+        
         this.state = {
             // 0: neutral, 1: like, -1: dislike
             user_feedback: 0,
@@ -23,7 +15,7 @@ class Noticia {
             dislikes: 0
         }
     }
-
+    
     like() {
         if (this.state.user_feedback === -1) {
             // Cambiar de dislike a like    

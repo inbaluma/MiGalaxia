@@ -1,17 +1,20 @@
 import NoticiaPreview from "./NoticiaPreview";
 
 function NoticiasHome(props) {
-  const componentes = [];
-  const noticias = props.noticias;
 
-  for (let i = 0; i < noticias.length; i++) {
-    componentes.push(<NoticiaPreview key={i} noticia={noticias[i]} />);
-  }
+  const noticias = props.noticias;
 
   return (
     <div id="noticias">
       <h1 className="titulo">Noticias</h1>
-      <div className="row mx-2">{componentes}</div>
+      <div className='row m-2'>
+            {noticias.map(element => {
+                return (
+                    <NoticiaPreview noticia={element}/>
+                )
+            })}
+            <p className='text-secondary-dark'>{noticias.length} noticias mostradas</p>
+        </div>
     </div>
   );
 }

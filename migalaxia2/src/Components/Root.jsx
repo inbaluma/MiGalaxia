@@ -5,7 +5,7 @@ import { useState } from "react";
 const Root = () => {
   const [mode, setMode] = useState("dark");
 
-  function changeMode(elemento) {
+  function changeMode() {
     let currentMode;
     let texto;
     if (mode === "dark") {

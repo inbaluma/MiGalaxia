@@ -3,6 +3,7 @@ import Navigation from "../Navigation";
 import "./Noticia.css";
 
 function NoticiaCompleta(props) {
+   
     const noticia = props.noticia;
 
     let introduccion = <section key="0" children={[]}></section>;
@@ -36,10 +37,10 @@ function NoticiaCompleta(props) {
 
     return (
         <div className="mx-3">
-            <Navigation actual={noticia.nombre} paginas={[{nombre: "Noticias", path:"/noticias"}]}/>
-            <h1 className="titulo">{noticia.nombre}</h1>
+            <Navigation actual={noticia.titulo} paginas={[{nombre: "Noticias", path:"/noticias"}]}/>
+            <h1 className="titulo">{noticia.titulo}</h1>
             <div className="container text-center mb-2">
-                <img className="img-fluid rounded" src={noticia.img} alt=""/>
+                <img className="img-fluid rounded" src={noticia.img} alt={noticia.descripcion_imagen}/>
             </div>
             {secciones}
             <hr/>
