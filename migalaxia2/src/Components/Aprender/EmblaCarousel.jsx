@@ -8,21 +8,20 @@ import venusImage from './Venus.jpg';
 import earthImage from './Earth.jpg';
 
 const slides = [
-  { imageUrl: sunImage, planetName: 'Sol', path: '/sol'},
-  {imageUrl: mercurioImage, planetName: 'Mercurio', path: '/mercurio' },
-  {imageUrl: venusImage, planetName: 'Venus', path: '/venus'},
-  {imageUrl: earthImage, planetName: 'Tierra', path: '/earth'}
+  { imageUrl: sunImage, planetName: 'Sol', path: '/sol' },
+  { imageUrl: mercurioImage, planetName: 'Mercurio', path: '/mercurio' },
+  { imageUrl: venusImage, planetName: 'Venus', path: '/venus' },
+  { imageUrl: earthImage, planetName: 'Tierra', path: '/earth' }
 ];
 
 const EmblaCarousel = (props) => {
-  const {options, slides} = props
+  const { options } = props
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel(options)
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
     containScroll: 'keepSnaps',
     dragFree: true
   })
-
 
   const onThumbClick = useCallback(
     (index) => {
@@ -47,12 +46,15 @@ const EmblaCarousel = (props) => {
 
   return (
     <div className="embla">
-      <div className="embla__viewport" ref={emblaMainRef} style={{maxWidth: "70%", margin: "0 auto"}}>
+      <div className="embla__viewport" ref={emblaMainRef} style={{ maxWidth: "70%", margin: "0 auto" }}>
         <div className="embla__container">
-          {slides.map((slide,index) => (
-            <div className="embla__slide" key={index} style={{maxWidth: "400px"}}>
+          {slides.map((slide, index) => (
+            <div className="embla__slide" key={index} style={{ maxWidth: "400px", textAlign: "center" }}>
+              <div style={{ marginBottom: "10px", fontWeight: "bold", fontSize: "1.2em" }}>
+                {slide.planetName}
+              </div>
               <img src={slide.imageUrl} alt={`Slide ${index + 1}`} style={{ width: '100%', height: '400px' }} />
-              <Link to= {slide.path} style= {{display: "block"}}>Más información</Link>
+              <Link to={slide.path} style={{ display: "block" }}>Más información</Link>
             </div>
           ))}
         </div>
@@ -61,7 +63,7 @@ const EmblaCarousel = (props) => {
       <div className="embla-thumbs">
         <div className="embla-thumbs__viewport" ref={emblaThumbsRef}>
           <div className="embla-thumbs__container">
-            {slides.map((slide,index) => (
+            {slides.map((slide, index) => (
               <Thumb
                 key={index}
                 onClick={() => onThumbClick(index)}
@@ -77,3 +79,4 @@ const EmblaCarousel = (props) => {
 }
 
 export default EmblaCarousel
+
