@@ -6,12 +6,22 @@ import sunImage from './sun.jpg';
 import mercurioImage from './mercurio.jpg';
 import venusImage from './Venus.jpg';
 import earthImage from './Earth.jpg';
+import marsImage from './Mars.jpg';
+import jupiterImage from './Jupiter.jpg';
+import saturnImage from './Saturn.jpg';
+import uranusImage from './Uranus.jpg';
+import neptuneImage from './Neptune.jpg';
 
 const slides = [
   { imageUrl: sunImage, planetName: 'Sol', path: '/sol'},
   {imageUrl: mercurioImage, planetName: 'Mercurio', path: '/mercurio' },
   {imageUrl: venusImage, planetName: 'Venus', path: '/venus'},
-  {imageUrl: earthImage, planetName: 'Tierra', path: '/earth'}
+  {imageUrl: earthImage, planetName: 'Tierra', path: '/earth'},
+  {imageUrl: marsImage, planetName: 'Marte', path: '/mars'},
+  {imageUrl: jupiterImage, planetName: 'Jupiter', path: '/jupiter'},
+  {imageUrl: saturnImage, planetName: 'Saturn', path: '/saturn'},
+  {imageUrl: uranusImage, planetName: 'Uranus', path: '/uranus'},
+  {imageUrl: neptuneImage, planetName: 'Neptune', path: '/neptune'}
 ];
 
 const EmblaCarousel = (props) => {

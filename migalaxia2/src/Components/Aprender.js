@@ -13,6 +13,11 @@ import sunImage from './Aprender/sun.jpg';
 import mercurioImage from './Aprender/mercurio.jpg';
 import venusImage from './Aprender/Venus.jpg'
 import earthImage from './Aprender/Earth.jpg'
+import marsImage from './Aprender/Mars.jpg'
+import jupiterImage from './Aprender/Jupiter.jpg'
+import saturnImage from './Aprender/Saturn.jpg'
+import uranusImage from './Aprender/Uranus.jpg'
+import neptuneImage from './Aprender/Neptune.jpg'
 
 const OPTIONS = {}
 //const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
@@ -33,6 +38,26 @@ const SLIDES = [
   {
     imageUrl: earthImage,
     path: "/infoEarth"
+  },
+  {
+    imageUrl: marsImage,
+    path: "/infoMars"
+  },
+  {
+    imageUrl: jupiterImage,
+    path: "/infoJupiter"
+  },
+  {
+    imageUrl: saturnImage,
+    path: "/infoSaturn"
+  },
+  {
+    imageUrl: uranusImage,
+    path: "/infoUranus"
+  },
+  {
+    imageUrl: neptuneImage,
+    path: "/infoNeptune"
   }
 ]
 

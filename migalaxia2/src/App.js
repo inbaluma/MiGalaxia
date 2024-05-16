@@ -15,6 +15,11 @@ import Sun from "./Components/Aprender/Sun.jsx";
 import Mercury  from "./Components/Aprender/Mercury.jsx";
 import Venus from "./Components/Aprender/Venus.jsx"
 import Earth from "./Components/Aprender/Earth.jsx";
+import Mars from "./Components/Aprender/Mars.jsx";
+import Jupiter from "./Components/Aprender/Jupiter.jsx";
+import Saturn from "./Components/Aprender/Saturn.jsx";
+import Uranus from "./Components/Aprender/Uranus.jsx";
+import Neptune from "./Components/Aprender/Neptune.jsx";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -51,6 +56,26 @@ const router = createBrowserRouter([
             {
                 path: "infoEarth",
                 element: <Earth/>
+            },
+            {
+                path: "infoMars",
+                element: <Mars/>
+            },
+            {
+              path: "infoJupiter",
+              element: <Jupiter/>  
+            },
+            {
+                path: "infoSaturn",
+                element: <Saturn/>
+            },
+            {
+                path: "infoUranus",
+                element: <Uranus/>
+            },
+            {
+                path: "infoNeptune",
+                element: <Neptune/>
             },
             {
                 path: "jugar",
