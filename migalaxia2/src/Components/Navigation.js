@@ -7,6 +7,7 @@ paginas: array de
     }
 en orden de pagina anterior a posterior, por ejemplo de Juegos a Pasapalabra
 */
+import {Link} from "react-router-dom";
 import '../index.css';
 
 function Navigation(props) {
@@ -16,9 +17,9 @@ function Navigation(props) {
         const pagina = props.paginas[i];
         componentes.push(
             <li key={i} className="breadcrumb-item">
-                <a className='link-secondary-dark' href={pagina.path}>
+                <Link className='link-secondary' to={pagina.path}>
                     {pagina.nombre}
-                </a>
+                </Link>
             </li>
         );
     }

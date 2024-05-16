@@ -19,27 +19,24 @@ code {
   font-weight: bold;
 }
 
-/* Textos para modo claro y modo oscuro */
-.text-normal-light {
-  color: black;
+/* Estilos especificos del modo claro */
+[data-bs-theme=light] {
+  .text-secondary {
+    color:rgb(87, 87, 87);
+  }
+
+  .link-secondary {
+    color:rgb(87, 87, 87);
+  }
 }
 
-.text-normal-dark {
-  color: white;
-}
+/* Estilos especificos del modo oscuro */
+[data-bs-theme=dark] {
+  .text-secondary-dark {
+    color:rgb(172, 172, 172);
+  }
 
-.text-secondary-light {
-  color:rgb(87, 87, 87);
-}
-
-.text-secondary-dark {
-  color:rgb(172, 172, 172);
-}
-
-.link-secondary-light {
-  color:rgb(87, 87, 87);
-}
-
-.link-secondary-dark {
-  color:rgb(172, 172, 172);
+  .link-secondary {
+    color:rgb(172, 172, 172);
+  }
 }
