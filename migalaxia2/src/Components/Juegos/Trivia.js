@@ -11,7 +11,7 @@ function trivia (){
             <div className="contenedor">
                 <h1 className="titulo mb-3">TRIVIA</h1>
                 <hr />
-                <h2>¿Quién está mas calvo?</h2>
+                <h2>1. ¿Quién está mas calvo?</h2>
                 <ul>
                     <li>Guardiola</li>
                     <li>Iniesta</li>
