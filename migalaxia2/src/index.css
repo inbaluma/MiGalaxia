@@ -40,3 +40,13 @@ code {
     color:rgb(172, 172, 172);
   }
 }
+
+
+/*Esta parte de aqui es para hacer que los botones del carrusel cambien de modo claro a oscuro*/
+:root {
+  --border-color: black; /* Default to black for light mode */
+}
+
+[data-bs-theme= dark] {
+  --border-color: white; /* Set to white for dark mode */
+}

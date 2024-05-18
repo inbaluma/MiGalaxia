@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const Thumb = (props) => {
-  const { selected, index, onClick } = props
+  const { selected, name, onClick } = props
 
   return (
     <div
@@ -14,7 +14,7 @@ export const Thumb = (props) => {
         type="button"
         className="embla-thumbs__slide__number"
       >
-        {index + 1}
+        {name}
       </button>
     </div>
   )

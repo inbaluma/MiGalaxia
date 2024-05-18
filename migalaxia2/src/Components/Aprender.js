@@ -26,38 +26,47 @@ const SLIDES = [
   {
     imageUrl: sunImage,
     path: "/infoSun",
+    name: "Sol"
   },
   {
     imageUrl: mercurioImage,
-    path: "/infoMercury"
+    path: "/infoMercury",
+    name: "Mercurio"
   },
   {
     imageUrl: venusImage,
-    path: "/infoVenus"
+    path: "/infoVenus",
+    name: "Venus"
   },
   {
     imageUrl: earthImage,
-    path: "/infoEarth"
+    path: "/infoEarth",
+    name: "Tierra"
   },
   {
     imageUrl: marsImage,
-    path: "/infoMars"
+    path: "/infoMars",
+    name: "Marte"
   },
   {
     imageUrl: jupiterImage,
-    path: "/infoJupiter"
+    path: "/infoJupiter",
+    name: "Júpiter"
   },
   {
     imageUrl: saturnImage,
-    path: "/infoSaturn"
+    path: "/infoSaturn", 
+    name: "Saturno"
   },
   {
     imageUrl: uranusImage,
-    path: "/infoUranus"
+    path: "/infoUranus",
+    name: "Urano"
   },
   {
     imageUrl: neptuneImage,
-    path: "/infoNeptune"
+    path: "/infoNeptune",
+    name: "Neptuno"
   }
 ]
 
