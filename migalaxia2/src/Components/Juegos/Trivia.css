@@ -54,3 +54,13 @@
     margin:auto;
     font-size: 18px;
 }
+
+.contenedor .correct{
+    background: #dffff2;
+    background-color: #74f1ce;
+}
+
+.contenedor .wrong{
+    background: #efe6e6;
+    background-color: #f09696;
+}

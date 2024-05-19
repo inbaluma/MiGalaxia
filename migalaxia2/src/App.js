@@ -8,7 +8,7 @@ import Aprender from "./Components/Aprender.js";
 import Jugar from "./Components/Jugar.js";
 import FotoDelDia from "./Components/FotoDelDia/FotoDelDia.js";
 import Pasapalabra from "./Components/Juegos/Pasapalabra.js";
-import Trivia from "./Components/Juegos/Trivia.js";
+import Trivia from "./Components/Juegos/Trivia.jsx";
 import Memoria from "./Components/Juegos/Memoria.js";
 import Ahorcado from "./Components/Juegos/Ahorcado.js";
 import Sun from "./Components/Aprender/Sun.jsx";
@@ -98,7 +98,7 @@ const router = createBrowserRouter([
                 element: <Pasapalabra/>
             },
             {
-                path: "jugar/trivia",
+                path: "jugar/Trivia",
                 element: <Trivia/>
             },
             {
