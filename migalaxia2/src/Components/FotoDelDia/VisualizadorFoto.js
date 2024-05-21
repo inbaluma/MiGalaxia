@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function VisualizadorFoto(props) {
+function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 	const CLAVE = "F0YEUnbX6pJC6gWkSi2TMwPXdCX11TeGLT23ZjF9";
 	const URL = "https://api.nasa.gov/planetary/apod"; //Con GET
 	const MENSAJE_ERROR =
@@ -11,6 +11,20 @@ function VisualizadorFoto(props) {
 			fecha.getMonth() + 1
 		}-${fecha.getDate()}`;
 	}
+
+	function saltarADescripcion() {
+		document.getElementById("descripcionTexto").scrollIntoView();
+	}
+
+	const cambiarTexto = () => {
+		if (texto === "Mostrar descripción") {
+			setTexto("Ocultar descripción");
+		} else {
+			setTexto("Mostrar descripción");
+		}
+
+		setTimeout(saltarADescripcion,250);
+	};
 
 	const fecha = props.fecha;
 	const [boton, setBoton] = useState(<></>);
@@ -78,14 +92,6 @@ function VisualizadorFoto(props) {
 		cargarImagenAPI();
 	}, [fecha]);
 
-	const cambiarTexto = () => {
-		if (texto === "Mostrar descripción") {
-			setTexto("Ocultar descripción");
-		} else {
-			setTexto("Mostrar descripción");
-		}
-	};
-
 	return (
 		<>
 			<div className="text-center mx-0 g-0 col">
@@ -114,8 +120,8 @@ function VisualizadorFoto(props) {
 						{texto}
 					</a>
 				</p>
-				<div className="collapse" id="descripcionColapsada">
-					<div className="card card-body text-wrap fs-6 m-3">
+				<div className="collapse" id="descripcionColapsada" lang="en" tabIndex="0">
+					<div id="descripcionTexto" className="card card-body text-wrap fs-6 m-3">
 						{descripcion}
 					</div>
 				</div>
@@ -132,7 +138,3 @@ function VisualizadorFoto(props) {
 	);
 }
 export default VisualizadorFoto;
-VisualizadorFoto.defaultProps = {
-	fecha: new Date(),
-	descarga: false,
-};
