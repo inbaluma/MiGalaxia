@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/MiGalaxia/static/css/main.5f425955.css",
-    "main.js": "/MiGalaxia/static/js/main.6f42676d.js",
+    "main.js": "/MiGalaxia/static/js/main.df0e9944.js",
     "static/media/imagenBienvenida.jpg": "/MiGalaxia/static/media/imagenBienvenida.8c688121a9f8e0841942.jpg",
     "index.html": "/MiGalaxia/index.html",
     "main.5f425955.css.map": "/MiGalaxia/static/css/main.5f425955.css.map",
-    "main.6f42676d.js.map": "/MiGalaxia/static/js/main.6f42676d.js.map"
+    "main.df0e9944.js.map": "/MiGalaxia/static/js/main.df0e9944.js.map"
   },
   "entrypoints": [
     "static/css/main.5f425955.css",
-    "static/js/main.6f42676d.js"
+    "static/js/main.df0e9944.js"
   ]
 }
