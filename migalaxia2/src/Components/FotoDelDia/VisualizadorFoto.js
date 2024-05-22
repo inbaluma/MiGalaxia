@@ -32,7 +32,6 @@ function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 	const [imagen, setImagen] = useState(<></>);
 	const [texto, setTexto] = useState("Mostrar descripción");
 	const [tipo, setTipo] = useState("Imagen");
-	let URLDatos;
 
 	useEffect(() => {
 		const cargarImagenAPI = async () => {
@@ -40,13 +39,9 @@ function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 			try {
 				console.log("API llamada: " + obtenerURLAPI());
 				const response = await fetch(obtenerURLAPI());
-				if (!response.ok) {
-					setImagen(<h3>{MENSAJE_ERROR}</h3>);
-				}
-				let datosImagen = await response.json();
-				setDescripcion(datosImagen.explanation);
-				URLDatos = datosImagen.url;
-				if (datosImagen.media_type === "image") {
+				if (response.status === 429){
+					setImagen(<h3>Demasiadas peticiones, espere hasta la próxima hora</h3>);
+					setDescripcion("Este mensaje significa que nos hemos pasado de llamadas a la API");
 					setBoton(
 						<button
 							id="botonDescarga"
@@ -57,33 +52,63 @@ function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 							Descargar foto
 						</button>
 					);
-					setImagen(
-						<img
-							src={URLDatos}
-							className="shadow rounded float-center img-fluid"
-							alt="La imagen astronómica de hoy"
-						/>
+				} else if (!response.ok) {
+					setImagen(<h3>{MENSAJE_ERROR}</h3>);
+					setDescripcion("No se ha podido cargar la descripción");
+					setBoton(
+						<button
+							id="botonDescarga"
+							className={`btn btn-secondary my-3 btn-sm ${
+								props.descarga ? "" : "disabled"
+							}`}
+						>
+							Descargar foto
+						</button>
 					);
 				} else {
-					setTipo("Vídeo");
-					setBoton(
-						<a
-							className="btn btn-outline-secondary my-3 disabled text-wrap"
-							tabIndex="-1"
-							aria-disabled="true"
-						>
-							No se pueden descargar vídeos
-						</a>
-					);
-					setImagen(
-						<div className="ratio ratio-16x9">
-							<iframe
-								title="Vídeo del día"
+					let datosImagen = await response.json();
+					setDescripcion(datosImagen.explanation);
+					let URLDatos = datosImagen.url;
+					if (datosImagen.media_type === "image") {
+						setBoton(
+							<button
+								id="botonDescarga"
+								className={`btn btn-secondary my-3 btn-sm ${
+									props.descarga ? "" : "disabled"
+								}`}
+							>
+								Descargar foto
+							</button>
+						);
+						setImagen(
+							<img
 								src={URLDatos}
+								className="shadow rounded float-center img-fluid"
 								alt="La imagen astronómica de hoy"
 							/>
-						</div>
-					);
+						);
+					} else {
+						setTipo("Vídeo");
+						setBoton(
+							<button
+								type="button"
+								className="btn btn-outline-secondary my-3 disabled text-wrap"
+								tabIndex="-1"
+								aria-disabled="true"
+							>
+								No se pueden descargar vídeos
+							</button>
+						);
+						setImagen(
+							<div className="ratio ratio-16x9">
+								<iframe
+									title="Vídeo del día"
+									src={URLDatos}
+									alt="La imagen astronómica de hoy"
+								/>
+							</div>
+						);
+					}
 				}
 			} catch (err) {
 				setImagen(<h3>{MENSAJE_ERROR}</h3>);
