@@ -1,0 +1,13 @@
+[data-bs-theme=dark] {
+    .react-calendar {
+        background-color: black;
+    }
+
+    .react-calendar button:disabled {
+        background-color: darkslategray;
+    }
+
+    .react-calendar__tile--now {
+        background: blue;
+      }
+}

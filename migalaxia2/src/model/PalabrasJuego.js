@@ -5,7 +5,7 @@ class Palabra {
 
         this.palabra = this.minusculasSinTildes(palabra);
 
-        this.definicion = definicion;
+        this.definicion = definicion;        
 
         if (empieza == null) {
             this.empieza = true;

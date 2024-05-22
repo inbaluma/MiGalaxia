@@ -4,6 +4,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import VisualizadorFoto from "./VisualizadorFoto";
 import Navigation from '../Navigation';
+import './Calendar.css';
 
 function MasFotos() {
 

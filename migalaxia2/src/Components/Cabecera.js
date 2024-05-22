@@ -54,10 +54,10 @@ function Cabecera(props) {
     }
 
     return (
-        <nav id="cabecera" className="navbar sticky-top navbar-expand-md gradient">
+        <nav id="cabecera" className="navbar sticky-top navbar-expand-md gradient" role="navigation" aria-label='Primaria'>
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/" data-page="0">MiGalaxia</Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir navegación">
                     {<FontAwesomeIcon icon="fas fa-bars text-light"/>}
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">

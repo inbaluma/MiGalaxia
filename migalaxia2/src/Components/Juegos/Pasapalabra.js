@@ -10,8 +10,33 @@ import Navigation from "../Navigation";
 function Pasapalabra() {
 
     const palabras = new SetPalabras([
-        new Palabra('A', 'Ámigo', 'Definicion amigo'),
-        new Palabra('B', 'Bebé', 'Definicion bebé')
+        new Palabra('A', 'Astronauta', 'Persona que tripula una astronave o que está entrenada para este trabajo.'),
+        new Palabra('B', '', ''),
+        new Palabra('C', 'Cometa', 'Astro generalmente formado por un núcleo poco denso y una atmósfera luminosa que lo envuelve, precediéndolo o siguiéndolo, según su posición respecto del Sol, y que describe una órbita muy excéntrica.'),
+        new Palabra('D', '', ''),
+        new Palabra('E', '', ''),
+        new Palabra('F', '', ''),
+        new Palabra('G', 'Gravitación', 'Atracción universal de los cuerpos en razón de su masa.'),
+        new Palabra('H', '', ''),
+        new Palabra('I', '', ''),
+        new Palabra('J', '', ''),
+        new Palabra('K', '', ''),
+        new Palabra('L', '', ''),
+        new Palabra('M', '', ''),
+        new Palabra('N', '', ''),
+        new Palabra('Ñ', '', '', false),
+        new Palabra('O', '', ''),
+        new Palabra('P', '', ''),
+        new Palabra('Q', '', ''),
+        new Palabra('R', '', ''),
+        new Palabra('S', '', ''),
+        new Palabra('T', 'Telescopio', ''),
+        new Palabra('U', '', ''),
+        new Palabra('V', 'Venus', 'El segundo planeta del sistema solar en orden de proximidad al Sol'),
+        new Palabra('W', '', ''),
+        new Palabra('X', '', ''),
+        new Palabra('Y', '', ''),
+        new Palabra('Z', '', ''),
     ]);
 
     const comprobar = (e) => {
@@ -51,9 +76,11 @@ function Pasapalabra() {
             palabra = palabras.getNextPalabra();
             while (! palabra.isLibre()) palabra = palabras.getNextPalabra();
 
-            document.getElementById("letra").innerText = palabra.getLetra();
+            document.getElementById("titulo").innerText = palabra.getHeading();
             document.getElementById("definicion").innerText = palabra.getDefinicion();
             document.getElementById("intentosRestantes").innerText = palabra.getIntentosRestantes();
+
+            document.getElementById("inputPalabra").value = "";
 
             mensaje.innerText = "";
 
@@ -113,7 +140,7 @@ function Pasapalabra() {
             <h1 className="titulo mb-3">Pasapalabra</h1>
             <div className="card mx-3">
                 <div className="card-body">
-                    <h2 className="titulo">Empieza por la '<strong id="letra">{palabra.letra}</strong>'</h2>
+                    <h2 className="titulo" id="titulo">{palabra.getHeading()}</h2>
                     <p id="definicion">{palabra.definicion}</p>
                     <div className="row">
                         <div className="col-lg-6">

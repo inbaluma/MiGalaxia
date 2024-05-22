@@ -44,7 +44,7 @@ const EmblaCarousel = (props) => {
           {slides.map((slide,index) => (
             <div className="embla__slide" key={index} style={{maxWidth: "400px"}}>
               <img src={slide.imageUrl} alt={`Slide ${index + 1}`} style={{ width: '100%', height: '400px' }} />
-              <Link to= {slide.path} style= {{display: "block"}}>Más información</Link>
+              <Link to= {slide.path} style= {{display: "block"}} aria-label={'Más información sobre ' + slide.name}>Más información</Link>
             </div>
           ))}
         </div>

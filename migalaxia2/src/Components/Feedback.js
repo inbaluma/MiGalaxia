@@ -43,16 +43,16 @@ class Feedback extends React.Component {
         let iconLike;
         let iconDislike;
         if (this.state.userFeedback > 0) { // Like
-            iconLike = <FontAwesomeIcon icon="fas fa-thumbs-up" />;
-            iconDislike = <FontAwesomeIcon icon="far fa-thumbs-down" />;
+            iconLike = <FontAwesomeIcon icon="fas fa-thumbs-up" aria-label="me gusta activado"/>;
+            iconDislike = <FontAwesomeIcon icon="far fa-thumbs-down" aria-label="no me gusta desactivado"/>;
         }
         else if (this.state.userFeedback < 0) { // Dislike
-            iconLike = <FontAwesomeIcon icon="far fa-thumbs-up" />;
-            iconDislike = <FontAwesomeIcon icon="fas fa-thumbs-down" />;
+            iconLike = <FontAwesomeIcon icon="far fa-thumbs-up" aria-label="me gusta desactivado"/>;
+            iconDislike = <FontAwesomeIcon icon="fas fa-thumbs-down" aria-label="no me gusta activado"/>;
         }
         else { // Neutral
-            iconLike = <FontAwesomeIcon icon="far fa-thumbs-up" />;
-            iconDislike = <FontAwesomeIcon icon="far fa-thumbs-down" />;
+            iconLike = <FontAwesomeIcon icon="far fa-thumbs-up" aria-label="me gusta desactivado"/>;
+            iconDislike = <FontAwesomeIcon icon="far fa-thumbs-down" aria-label="no me gusta desactivado"/>;
         }
 
         return (
