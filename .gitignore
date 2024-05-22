@@ -15,4 +15,7 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
-/migalaxia/node_modules
+
+
+/build
+/node_modules
