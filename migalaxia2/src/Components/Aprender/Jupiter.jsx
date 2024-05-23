@@ -2,6 +2,8 @@ import React from 'react';
 import jupiterImage from './Jupiter.jpg';
 
 const Jupiter = () => {
+    document.title = "Aprender sobre Jupiter";
+
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src={jupiterImage} alt="Jupiter" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} />

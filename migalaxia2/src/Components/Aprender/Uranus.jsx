@@ -2,6 +2,8 @@ import React from 'react';
 import uranusImage from './Uranus.jpg';
 
 const Uranus = () => {
+    document.title = "Aprender sobre Urano";
+
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src={uranusImage} alt="Urano" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} />

@@ -7,6 +7,8 @@ import { data } from "../../assets/data";
 
 const Trivia = () => {
 
+    document.title = "Jugar al Trivia"
+
     let [index, setIndex] = useState(0);
     let [question,setQuestion] = useState(data[index]);
     let [lock,setLock] = useState(false);

@@ -1,6 +1,8 @@
 import imagenBienvenida from "./imagenBienvenida.jpg";
 
 function Bienvenido() {
+    document.title = "Bienvenido a MiGalaxia";
+
     return (
         <div style={{ textAlign: 'center' }}>
             <h1 className="titulo" style={{ fontSize: '3rem', marginBottom: '20px' }}>Bienvenido a MiGalaxia</h1>

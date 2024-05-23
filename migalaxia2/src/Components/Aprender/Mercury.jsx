@@ -2,6 +2,8 @@ import React from 'react';
 import mercurioImage from './mercurio.jpg'; // Ruta a la imagen de Mercurio
 
 const Mercury = () => {
+    document.title = "Aprender sobre Mercurio";
+
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src={mercurioImage} alt="Mercurio" style={{ maxWidth: '50%', marginRight: '20px' }} />

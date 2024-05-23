@@ -15,6 +15,9 @@ const cardImages = [
 ]
 
 function Memoria (){
+
+    document.title = "Jugar a Memoria Planetaria";
+
     const [cards, setCards] = useState([])
     const [turns, setTurns] = useState(0)
     //shuffle cards

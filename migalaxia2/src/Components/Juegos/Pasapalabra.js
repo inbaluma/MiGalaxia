@@ -9,12 +9,14 @@ import Navigation from "../Navigation";
 
 function Pasapalabra() {
 
+    document.title = "Jugar al Pasapalabra"
+
     const palabras = new SetPalabras([
         new Palabra('A', 'Astronauta', 'Persona que tripula una astronave o que está entrenada para este trabajo.'),
         new Palabra('B', '', ''),
         new Palabra('C', 'Cometa', 'Astro generalmente formado por un núcleo poco denso y una atmósfera luminosa que lo envuelve, precediéndolo o siguiéndolo, según su posición respecto del Sol, y que describe una órbita muy excéntrica.'),
         new Palabra('D', '', ''),
-        new Palabra('E', '', ''),
+        new Palabra('E', 'Eclipse', 'Ocultación transitoria total o parcial de un astro por interposición de otro cuerpo celeste.'),
         new Palabra('F', '', ''),
         new Palabra('G', 'Gravitación', 'Atracción universal de los cuerpos en razón de su masa.'),
         new Palabra('H', '', ''),
@@ -23,15 +25,16 @@ function Pasapalabra() {
         new Palabra('K', '', ''),
         new Palabra('L', '', ''),
         new Palabra('M', '', ''),
-        new Palabra('N', '', ''),
+        //new Palabra('N', ['Nave espacial', 'Nave', 'Astronave'], 'Vehículo capaz de navegar más allá de la atmósfera terrestre.'),
+        new Palabra('N', 'Nave', 'Vehículo capaz de navegar más allá de la atmósfera terrestre.'),
         new Palabra('Ñ', '', '', false),
-        new Palabra('O', '', ''),
+        new Palabra('O', 'Órbita', 'Trayectoria curva que describe un cuerpo en su movimiento alrededor de un centro.'),
         new Palabra('P', '', ''),
         new Palabra('Q', '', ''),
         new Palabra('R', '', ''),
-        new Palabra('S', '', ''),
-        new Palabra('T', 'Telescopio', ''),
-        new Palabra('U', '', ''),
+        new Palabra('S', 'Solsticio', 'Cada uno de los dos momentos anuales en que el Sol se halla en uno de los dos trópicos, lo cual sucede del 21 al 22 de junio para el de Cáncer, y del 21 al 22 de diciembre para el de Capricornio, y en los que la diferencia entre la duración del día y de la noche es mayor.'),
+        new Palabra('T', 'Telescopio', 'Instrumento que consta de lentes o espejos curvos y que permite ver agrandada una imagen de un objeto lejano, en especial los cuerpos celestes.'),
+        new Palabra('U', 'Universo', ''),
         new Palabra('V', 'Venus', 'El segundo planeta del sistema solar en orden de proximidad al Sol'),
         new Palabra('W', '', ''),
         new Palabra('X', '', ''),

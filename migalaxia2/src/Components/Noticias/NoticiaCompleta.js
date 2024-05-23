@@ -6,6 +6,8 @@ function NoticiaCompleta(props) {
    
     const noticia = props.noticia;
 
+    document.title = noticia.titulo;
+
     let introduccion = <section key="0" children={[]}></section>;
 
     let secciones = <div children={[]}></div>;
@@ -36,7 +38,7 @@ function NoticiaCompleta(props) {
     }
 
     return (
-        <div className="mx-3">
+        <div className="mx-3" lang="en">
             <Navigation actual={noticia.titulo} paginas={[{nombre: "Noticias", path:"/noticias"}]}/>
             <h1 className="titulo">{noticia.titulo}</h1>
             <div className="container text-center mb-2">

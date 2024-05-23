@@ -2,6 +2,8 @@ import React from 'react';
 import earthImage from './Earth.jpg'; 
 
 const Earth = () => {
+    document.title = "Aprender sobre la Tierra";
+
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src={earthImage} alt="Tierra" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} />

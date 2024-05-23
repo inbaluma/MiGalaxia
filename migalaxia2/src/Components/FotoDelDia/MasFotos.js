@@ -11,6 +11,10 @@ function MasFotos() {
     const fechaInicial = '1995-06-16';
     const [fecha,setFecha] = useState(new Date());
 
+    const formato_fecha = fecha.getDate() + "/" + (fecha.getMonth() + 1) + "/" + fecha.getFullYear();
+
+    document.title = "Foto del " + formato_fecha;
+
     return(
         <div className="mx-3">
             <Navigation actual="Más fotos" paginas={[{nombre: "Foto del día", path:"/foto"}]}/>

@@ -2,6 +2,8 @@ import React from 'react';
 import venusImage from './Venus.jpg'; 
 
 const Venus = () => {
+    document.title = "Aprender sobre Venus";
+
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src={venusImage} alt="Venus" style={{ maxWidth: '50%', marginRight: '20px' }} />

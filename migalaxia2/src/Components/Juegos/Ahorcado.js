@@ -7,6 +7,8 @@ import Teclado from "./Ahorcado/Teclado";
 
 function Ahorcado (){
 
+    document.title = "Jugar al Ahorcado";
+
     const [palabra,setPalabra] = useState("NEBULOSA");
     const [descripcion,setDescripcion] = useState("Está hecha de polvo y gases");
     const [ultimaTecla,setUltima] = useState("");

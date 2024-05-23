@@ -9,6 +9,9 @@ import NoticiaCompleta from './Noticias/NoticiaCompleta';
 import './Noticias/Noticia.css'
 
 function Noticias() {
+
+    document.title = "Noticias de MiGalaxia"
+
     const [noticias, setNoticias] = useState([]);
 
     const results = async () => {

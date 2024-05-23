@@ -2,6 +2,8 @@ import React from 'react';
 import sunImage from './sun.jpg'; // Ruta a la imagen del sol
 
 const Sun = () => {
+    document.title = "Aprender sobre el Sol";
+
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src={sunImage} alt="Sol" style={{ maxWidth: '50%', marginRight: '20px' }} />

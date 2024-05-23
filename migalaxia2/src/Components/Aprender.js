@@ -71,6 +71,8 @@ const SLIDES = [
 ]
 
 function ComponenteConImagen() {
+  document.title = "Aprender sobre MiGalaxia"
+
     return (
       <div style={{textAlign: "center"}}>
         <h1 style={{fontWeight: "bold", marginTop: "8px"}}>Aprender</h1>

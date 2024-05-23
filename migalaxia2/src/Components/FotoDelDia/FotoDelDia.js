@@ -4,6 +4,8 @@ function FotoDelDia() {
 	
 	const fecha = new Date();
 
+	document.title = "Foto del día de MiGalaxia";
+
 	return (
 		<div className="container text-center w-100">
 			<div className="row">

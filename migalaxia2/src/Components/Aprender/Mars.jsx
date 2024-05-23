@@ -2,6 +2,8 @@ import React from 'react';
 import marsImage from './Mars.jpg'; 
 
 const Mars  = () => {
+    document.title = "Aprender sobre Marte";
+
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src={marsImage} alt="Marte" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} />

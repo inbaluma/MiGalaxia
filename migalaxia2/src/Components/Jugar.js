@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 
 
 function Juegos() {
+
+  document.title = "Juegos de MiGalaxia";
+
   return (
     <div>
       <h1 style={{ textAlign: "center", fontWeight: "bold" }}>Juegos</h1>

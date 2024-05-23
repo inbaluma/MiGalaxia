@@ -2,6 +2,8 @@ import React from 'react';
 import neptuneImage from './Neptune.jpg'; 
 
 const Neptune = () => {
+    document.title = "Aprender sobre Neptuno";
+
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src={neptuneImage} alt="Neptuno" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} />

@@ -8,7 +8,7 @@ function NoticiaPreview(props) {
     const noticia = props.noticia;
 
     return (
-        <div className="col-lg-3 col-md-4 col-sm-6">
+        <div className="col-lg-3 col-md-4 col-sm-6" lang="en">
             <div className='card mx-2 mb-2'>
                 <div className='card-body'>
                     <Link className="click" to={""+noticia.id}>
