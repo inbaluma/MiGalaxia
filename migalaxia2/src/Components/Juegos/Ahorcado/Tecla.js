@@ -10,7 +10,8 @@ function Tecla({tecla, ultima, setUltima, activo = true}) {
     const [boton,setBoton] = useState(<></>);
     
     function pulsar() {
-        setUltima(tecla);
+        const e = {key : tecla};
+        setUltima(e);
         setBoton(desactivado);
     }
 

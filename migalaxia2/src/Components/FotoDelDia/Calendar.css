@@ -7,6 +7,14 @@
         background-color: darkslategray;
     }
 
+    .react-calendar button:hover:enabled {
+        color: black;
+    }
+
+    .react-calendar .react-calendar__month-view__days__day--weekend{
+        color: lightcoral;
+    }
+
     .react-calendar__tile--now {
         background: blue;
       }

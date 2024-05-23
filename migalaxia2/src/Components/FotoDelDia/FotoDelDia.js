@@ -8,12 +8,12 @@ function FotoDelDia() {
 
 	return (
 		<div className="container text-center w-100">
-			<div className="row">
+			<main className="row">
 				<div className="d-flex justify-content-center col-md-2 align-items-center">
 					<Link className="btn btn-primary btn-lg align-middle" to="masfotos">Más fotos</Link>
 				</div>
 				<VisualizadorFoto fecha={fecha}/>
-			</div>
+			</main>
 		</div>
 	);
 
