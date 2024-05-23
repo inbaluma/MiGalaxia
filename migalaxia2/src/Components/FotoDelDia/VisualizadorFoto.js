@@ -91,6 +91,7 @@ function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 						setTipo("Vídeo");
 						setBoton(
 							<button
+								id="botonDescarga"
 								type="button"
 								className="btn btn-outline-secondary my-3 disabled text-wrap"
 								tabIndex="-1"
@@ -140,7 +141,7 @@ function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 						aria-expanded="false"
 						aria-controls="descripcionColapsada"
 						onClick={cambiarTexto}
-						id="botonDescarga"
+						id="botonDescripcion"
 					>
 						{texto}
 					</a>
