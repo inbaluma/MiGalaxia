@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import './VisualizadorFoto.css'
 
 function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 	const CLAVE = "F0YEUnbX6pJC6gWkSi2TMwPXdCX11TeGLT23ZjF9";
@@ -81,11 +82,13 @@ function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 							</button>
 						);
 						setImagen(
-							<img
-								src={URLDatos}
-								className="shadow rounded float-center img-fluid"
-								alt="La imagen astronómica de hoy"
-							/>
+						<img
+							src={URLDatos}
+							className="shadow rounded float-center img-fluid"
+							alt="La imagen astronómica de hoy"
+							aria-describedby="#descripcionTexto"
+							id="imagenDelDia"
+						/>
 						);
 					} else {
 						setTipo("Vídeo");
@@ -152,7 +155,7 @@ function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 					</div>
 				</div>
 			</div>
-			<div className="text-center col-md-2">
+			<div className="text-center col-lg-1 fs-6">
 				{boton}
 				<br />
 				<p>

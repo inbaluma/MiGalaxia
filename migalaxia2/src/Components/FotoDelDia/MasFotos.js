@@ -20,11 +20,14 @@ function MasFotos() {
             <Navigation actual="Más fotos" paginas={[{nombre: "Foto del día", path:"/foto"}]}/>
             <div className="container-fluid">
                 <main className="row">
-                    <div className="d-flex flex-column justify-content-evenly col-md-4 align-items-center">
-                        <Link className="btn btn-primary btn-lg align-middle my-3" to="../foto">Volver a la foto de hoy</Link>
+                    <div className="d-flex flex-column justify-content-center col-lg-3 align-items-center">
+                        <h3>Elija un día para ver su foto</h3>
                         <Calendar minDate={new Date(fechaInicial)} maxDate={new Date()} onClickDay={setFecha}/>
                     </div>
                     <VisualizadorFoto fecha={fecha}/>
+                    <div className="d-flex justify-content-center col-lg-2 align-items-center">
+                        <Link className="btn btn-primary btn-lg align-middle my-3 fs-5" to="../foto">Volver a la foto de hoy</Link>
+                    </div>
                 </main>
             </div>
         </div>
