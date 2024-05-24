@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MiGalaxia/static/css/main.171ccc4f.css",
-    "main.js": "/MiGalaxia/static/js/main.3a9e8392.js",
+    "main.js": "/MiGalaxia/static/js/main.38048e1d.js",
     "static/media/Venus.jpg": "/MiGalaxia/static/media/Venus.768f00c89eb008edad89.jpg",
     "static/media/Mars.jpg": "/MiGalaxia/static/media/Mars.8c41dd72aa193556da94.jpg",
     "static/media/sun.jpg": "/MiGalaxia/static/media/sun.648023525b6143b215bc.jpg",
@@ -14,10 +14,10 @@
     "static/media/Saturn.jpg": "/MiGalaxia/static/media/Saturn.254e35991cf967a69cab.jpg",
     "index.html": "/MiGalaxia/index.html",
     "main.171ccc4f.css.map": "/MiGalaxia/static/css/main.171ccc4f.css.map",
-    "main.3a9e8392.js.map": "/MiGalaxia/static/js/main.3a9e8392.js.map"
+    "main.38048e1d.js.map": "/MiGalaxia/static/js/main.38048e1d.js.map"
   },
   "entrypoints": [
     "static/css/main.171ccc4f.css",
-    "static/js/main.3a9e8392.js"
+    "static/js/main.38048e1d.js"
   ]
 }
