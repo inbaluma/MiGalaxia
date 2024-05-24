@@ -38,7 +38,7 @@ function NoticiaCompleta(props) {
     }
 
     return (
-        <div className="mx-3" lang="en">
+        <div id="main" className="mx-3" lang="en">
             <Navigation actual={noticia.titulo} paginas={[{nombre: "Noticias", path:"/noticias"}]}/>
             <h1 className="titulo">{noticia.titulo}</h1>
             <div className="container text-center mb-2">

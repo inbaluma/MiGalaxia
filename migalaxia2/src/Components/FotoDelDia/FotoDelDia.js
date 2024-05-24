@@ -7,7 +7,7 @@ function FotoDelDia() {
 	document.title = "Foto del día de MiGalaxia";
 
 	return (
-		<div className="container-fluid text-center w-100">
+		<div id="main" className="container-fluid text-center w-100">
 			<main className="row">
 				<div className="col-lg-3"></div>
 				<VisualizadorFoto fecha={fecha}/>

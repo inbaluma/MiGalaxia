@@ -16,7 +16,7 @@ function MasFotos() {
     document.title = "Foto del " + formato_fecha;
 
     return(
-        <div className="mx-3">
+        <div id="main" className="mx-3">
             <Navigation actual="Más fotos" paginas={[{nombre: "Foto del día", path:"/foto"}]}/>
             <div className="container-fluid">
                 <main className="row">

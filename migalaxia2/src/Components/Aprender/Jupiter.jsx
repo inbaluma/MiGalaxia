@@ -5,7 +5,7 @@ const Jupiter = () => {
     document.title = "Aprender sobre Jupiter";
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
             <img src={jupiterImage} alt="Jupiter" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} />
             <div>
                 <h1 style={{marginLeft: '110px'}}>Jupiter</h1>

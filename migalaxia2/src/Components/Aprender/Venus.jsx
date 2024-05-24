@@ -5,7 +5,7 @@ const Venus = () => {
     document.title = "Aprender sobre Venus";
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
             <img src={venusImage} alt="Venus" style={{ maxWidth: '50%', marginRight: '20px' }} />
             <div>
                 <h1 style={{ marginLeft: '110px' }}>Venus</h1>

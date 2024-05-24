@@ -74,7 +74,7 @@ function ComponenteConImagen() {
   document.title = "Aprender sobre MiGalaxia"
 
     return (
-      <div style={{textAlign: "center"}}>
+      <div id="main" style={{textAlign: "center"}}>
         <h1 style={{fontWeight: "bold", marginTop: "8px"}}>Aprender</h1>
         <h2 style={{fontWeight: "bold", marginBottom: "20px"}}>El sistema solar</h2>
         <h3>Navega entre los planetas</h3>

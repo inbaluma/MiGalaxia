@@ -5,7 +5,7 @@ const Mars  = () => {
     document.title = "Aprender sobre Marte";
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
             <img src={marsImage} alt="Marte" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} />
             <div>
                 <h1 style={{marginLeft: '110px'}}>Marte</h1>

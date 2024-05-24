@@ -4,7 +4,7 @@ function Bienvenido() {
     document.title = "Bienvenido a MiGalaxia";
 
     return (
-        <div style={{ textAlign: 'center' }}>
+        <div id="main" style={{ textAlign: 'center' }}>
             <h1 className="titulo" style={{ fontSize: '3rem', marginBottom: '20px' }}>Bienvenido a MiGalaxia</h1>
             <div style={{ margin: 'auto', width: '50%' }}>
                 <p style={{ fontSize: '1.5rem' }}>El lugar perfecto para aprender sobre nuestra galaxia</p>

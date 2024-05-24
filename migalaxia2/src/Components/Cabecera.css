@@ -34,3 +34,20 @@
     justify-self: flex-end;
   }
 }
+
+/* Texto para lector de pantalla */
+/* Lo escondemos normalmente */
+.texto-lector-pantalla {
+  opacity: 0;
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+}
+
+/* Cuando recibe el foco se hace visible */
+.texto-lector-pantalla:focus {
+  opacity: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2px;
+}

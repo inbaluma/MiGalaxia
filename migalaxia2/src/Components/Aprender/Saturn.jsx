@@ -5,7 +5,7 @@ const Saturn = () => {
     document.title = "Aprender sobre Saturno";
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
             <img src={saturnImage} alt="Saturno" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} />
             <div>
                 <h1 style={{marginLeft: '110px'}}>Saturno</h1>

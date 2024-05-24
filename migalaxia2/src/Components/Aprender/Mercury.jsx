@@ -5,7 +5,7 @@ const Mercury = () => {
     document.title = "Aprender sobre Mercurio";
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
             <img src={mercurioImage} alt="Mercurio" style={{ maxWidth: '50%', marginRight: '20px' }} />
             <div>
                 <h1 style={{ marginLeft: '110px' }}>Mercurio</h1>

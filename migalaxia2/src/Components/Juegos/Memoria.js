@@ -34,7 +34,7 @@ function Memoria (){
     console.log(cards, turns)
 
     return(
-        <div className="mx-3">
+        <div id="main" className="mx-3">
             <Navigation actual="Memoria Planetaria" paginas={[{nombre: "Jugar", path:"/jugar"}]}/>
             <h1 className="titulo mb-3">MEMORIA PLANETARIA</h1> 
             <button onClick={shuffledCards}>New Game</button>

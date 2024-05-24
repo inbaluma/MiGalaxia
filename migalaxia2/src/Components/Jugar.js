@@ -6,7 +6,7 @@ function Juegos() {
   document.title = "Juegos de MiGalaxia";
 
   return (
-    <div>
+    <div id="main">
       <h1 style={{ textAlign: "center", fontWeight: "bold" }}>Juegos</h1>
       <div className="row mx-3">
         <div className="col-12 col-md-6 col-lg-6 mb-3">

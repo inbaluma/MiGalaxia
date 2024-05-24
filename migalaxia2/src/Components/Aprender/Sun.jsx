@@ -5,7 +5,7 @@ const Sun = () => {
     document.title = "Aprender sobre el Sol";
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
             <img src={sunImage} alt="Sol" style={{ maxWidth: '50%', marginRight: '20px' }} />
             <div>
                 <h1 style={{marginLeft: '110px'}}>Sol</h1>

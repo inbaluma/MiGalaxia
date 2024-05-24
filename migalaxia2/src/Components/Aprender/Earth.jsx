@@ -5,7 +5,7 @@ const Earth = () => {
     document.title = "Aprender sobre la Tierra";
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
             <img src={earthImage} alt="Tierra" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} />
             <div>
                 <h1 style={{marginLeft: '110px'}}>Tierra</h1>

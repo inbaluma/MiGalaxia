@@ -13,33 +13,33 @@ function Pasapalabra() {
 
     const palabras = new SetPalabras([
         new Palabra('A', 'Astronauta', 'Persona que tripula una astronave o que está entrenada para este trabajo.'),
-        new Palabra('B', '', ''),
+        new Palabra('B', 'Baricentro', 'el centro de masa de un sistema de cuerpos.'),
         new Palabra('C', 'Cometa', 'Astro generalmente formado por un núcleo poco denso y una atmósfera luminosa que lo envuelve, precediéndolo o siguiéndolo, según su posición respecto del Sol, y que describe una órbita muy excéntrica.'),
-        new Palabra('D', '', ''),
+        new Palabra('D', 'Doppler', 'Efecto que produce un cambio aparende de la frecuencia de una onda cuando existe un movimiento relativo entre la fuente emisora y el observador.'),
         new Palabra('E', 'Eclipse', 'Ocultación transitoria total o parcial de un astro por interposición de otro cuerpo celeste.'),
-        new Palabra('F', '', ''),
+        new Palabra('F', 'Firmamento', 'Bóveda celeste en que están aparentemente los astros.'),
         new Palabra('G', 'Gravitación', 'Atracción universal de los cuerpos en razón de su masa.'),
-        new Palabra('H', '', ''),
-        new Palabra('I', '', ''),
-        new Palabra('J', '', ''),
-        new Palabra('K', '', ''),
-        new Palabra('L', '', ''),
-        new Palabra('M', '', ''),
+        new Palabra('H', 'Heliocentrismo', 'Concepción cosmológica que dictaba que el Sol era el centro del universo, en contraposición con el geocentrismo.'),
+        new Palabra('I', 'Interferómetro', 'Conjunto de instrumentos que se utilizan simultáneamente apuntando al mismo objeto para obtener una imagen de mayor resolución.'),
+        new Palabra('J', 'Júpiter', 'El mayor planeta del Sistema Solar.'),
+        new Palabra('K', 'Kelvin', 'Unidad de medida de temperatura.'),
+        new Palabra('L', 'Luz', 'Radiación electromagnética visible al ojo humano.'),
+        new Palabra('M', 'Meteorito', 'Fragmento de un cuerpo celeste que cae sobre la Tierra, o sobre un astro cualquiera.'),
         //new Palabra('N', ['Nave espacial', 'Nave', 'Astronave'], 'Vehículo capaz de navegar más allá de la atmósfera terrestre.'),
         new Palabra('N', 'Nave', 'Vehículo capaz de navegar más allá de la atmósfera terrestre.'),
-        new Palabra('Ñ', '', '', false),
+        new Palabra('Ñ', 'Año luz', 'Distancia que viaja la luz en un año terrestre.', false),
         new Palabra('O', 'Órbita', 'Trayectoria curva que describe un cuerpo en su movimiento alrededor de un centro.'),
-        new Palabra('P', '', ''),
-        new Palabra('Q', '', ''),
-        new Palabra('R', '', ''),
+        new Palabra('P', 'Planeta Enano', 'Un cuerpo celeste que orbita alrededor del Sol, posee suficiente masa, no ha limpiado su órbita de otros objetos y no es un satélite de otro planeta.'),
+        new Palabra('Q', 'Quantum', '...'),
+        new Palabra('R', 'Rayos cósmicos', 'Partículas subatómicas extremadamente energéticas que viajan por el universo con velocidades cercanas a la de la luz.'),
         new Palabra('S', 'Solsticio', 'Cada uno de los dos momentos anuales en que el Sol se halla en uno de los dos trópicos, lo cual sucede del 21 al 22 de junio para el de Cáncer, y del 21 al 22 de diciembre para el de Capricornio, y en los que la diferencia entre la duración del día y de la noche es mayor.'),
         new Palabra('T', 'Telescopio', 'Instrumento que consta de lentes o espejos curvos y que permite ver agrandada una imagen de un objeto lejano, en especial los cuerpos celestes.'),
-        new Palabra('U', 'Universo', ''),
+        new Palabra('U', 'Universo', 'Espacio exterior a la Tierra.'),
         new Palabra('V', 'Venus', 'El segundo planeta del sistema solar en orden de proximidad al Sol'),
-        new Palabra('W', '', ''),
-        new Palabra('X', '', ''),
+        new Palabra('W', 'Hawking', 'Apellido de un físico que hizo grandes descubrimientos a cerca de los abujeros negros.', false),
+        new Palabra('X', 'Rayos X', '...', false),
         new Palabra('Y', '', ''),
-        new Palabra('Z', '', ''),
+        new Palabra('Z', 'Zodíaco', 'La franja de la esfera celeste que se extiende, aproximadamente, unos 9 grados a ambos lados de la eclíptica (el plano de la órbita terrestre proyectado sobre el firmamento). Por esta zona se desplazan el Sol, la Luna y los planetas en su movimiento con respecto al fondo de estrellas.'),
     ]);
 
     const comprobar = (e) => {
@@ -138,7 +138,7 @@ function Pasapalabra() {
 
 
     return (
-        <div className="mx-3">
+        <main id="main" className="mx-3">
             <Navigation actual="Pasapalabra" paginas={[{nombre: "Jugar", path:"/jugar"}]}/>
             <h1 className="titulo mb-3">Pasapalabra</h1>
             <div className="card mx-3">
@@ -172,7 +172,7 @@ function Pasapalabra() {
                     {displayLetras}
                 </div>
             </div>
-        </div>
+        </main>
     )
     
 }

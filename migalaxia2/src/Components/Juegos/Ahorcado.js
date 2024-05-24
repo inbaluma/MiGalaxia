@@ -26,7 +26,7 @@ function Ahorcado (){
     }
 
     return(
-        <div className="container-fluid text-center" tabIndex={0} onKeyDown={cambiarTecla}>
+        <div id="main" className="container-fluid text-center" tabIndex={0} onKeyDown={cambiarTecla}>
             <Navigation actual="Ahorcado" paginas={[{nombre: "Jugar", path:"/jugar"}]}/>
             <div className="w-100 mx-auto">
                 <h1 className="titulo mb-3">Ahorcado</h1>

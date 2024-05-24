@@ -5,7 +5,7 @@ const Neptune = () => {
     document.title = "Aprender sobre Neptuno";
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
             <img src={neptuneImage} alt="Neptuno" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} />
             <div>
                 <h1 style={{marginLeft: '110px'}}>Neptuno</h1>

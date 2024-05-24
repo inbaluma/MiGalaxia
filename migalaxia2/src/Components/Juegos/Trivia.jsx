@@ -63,7 +63,7 @@ const Trivia = () => {
     }
 
     return (
-        <div className="mx-3">
+        <div id="main" className="mx-3">
             <Navigation actual="Trivia" paginas={[{nombre: "Jugar", path:"/jugar"}]}/>
             <div className="contenedor">
                 <h1 className="titulo mb-3">TRIVIA</h1>
