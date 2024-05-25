@@ -3,13 +3,13 @@ import { useState } from 'react';
 
 import "../../index.css"
 import Navigation from "../Navigation";
-/*import "./Memoria.css"*/
+import "./Memoria.css"
 import Earth from "./MemoriaImg/Earth.jpg";
 import Mars from "./MemoriaImg/Mars.jpg";
 import Saturn from "./MemoriaImg/Saturn.jpg";
 import Jupiter from "./MemoriaImg/Jupiter.jpg";
 import Neptune from "./MemoriaImg/Neptune.jpg";
-import Uranus from "./MemoriaImg/Uranus.jpg";
+import Mercury from "./MemoriaImg/mercurio.jpg";
 import cover from "./MemoriaImg/cover.png";
 import SingleCard from "./MemoriaImg/SingleCard";
 
@@ -20,7 +20,7 @@ const cardImages = [
     {"src": Saturn, matched: false},
     {"src": Jupiter, matched: false},
     {"src": Neptune, matched: false},
-    {"src": Uranus, matched: false}
+    {"src": Mercury, matched: false}
 ]
 
 function Memoria (){
