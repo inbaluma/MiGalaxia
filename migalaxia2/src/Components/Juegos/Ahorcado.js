@@ -16,12 +16,14 @@ function Ahorcado (){
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
         'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
     ];
-    let teclasDisponibles = [...alfabetoMayusculas];
+    const [teclasDisponibles,setDisponibles] = useState([...alfabetoMayusculas]);
 
     const cambiarTecla = (e) => {
-        console.log(e.key.toUpperCase());
-        if (teclasDisponibles.includes(e.key.toUpperCase())){
-            setUltima(e.key.toUpperCase());
+        const boton = e.key.toUpperCase();
+        if (teclasDisponibles.includes(boton)){
+            console.log(boton);
+            setUltima(boton);
+            setDisponibles(teclasDisponibles.filter(tecla => tecla !== boton));
         }
     }
 
@@ -34,7 +36,7 @@ function Ahorcado (){
                     <div className="card-body">
                         <h2>Pista :<br/>{descripcion}</h2>
                         <div className="row">
-                            <Teclado teclasPermitidas={teclasDisponibles} ultimaTecla={ultimaTecla} setUltima={cambiarTecla}/>
+                            <Teclado teclasPermitidas={teclasDisponibles} ultimaTecla={ultimaTecla} cambiarTecla={cambiarTecla}/>
                         </div>
                     </div>
                 </div>
