@@ -71,7 +71,7 @@ function Juegos() {
             <div className="card-body">
               <h5 className="card-title">Memoria Planetaria</h5>
               <p className="card-text">
-                ¡Descubre el universo mientras emparejas cartas de astronautas, planetas y naves espaciales en este juego de memoria galáctica! ¡Encuentra las parejas antes de que se pierdan en el espacio!
+                ¡Descubre el universo mientras emparejas cartas de planetas en este juego de memoria galáctica! ¡Encuentra las parejas antes de que se pierdan en el espacio!
               </p>
               <Link className="btn btn-primary" to="Memoria">Ir a Memoria Planetaria</Link>
             </div>

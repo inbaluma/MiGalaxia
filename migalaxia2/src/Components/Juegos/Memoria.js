@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import "../../index.css"
 import Navigation from "../Navigation";
-import "./Memoria.css"
+/*import "./Memoria.css"*/
 import Earth from "./MemoriaImg/Earth.jpg";
 import Mars from "./MemoriaImg/Mars.jpg";
 import Saturn from "./MemoriaImg/Saturn.jpg";
@@ -31,12 +31,15 @@ function Memoria (){
     const [turns, setTurns] = useState(0)
     const [choiceOne, setChoiceOne] = useState(null)
     const [choiceTwo, setChoiceTwo] = useState(null)
+    const [disabled, setDisabled] = useState(false)
     //shuffle cards
     const shuffledCards = () => {
         const shuffledCards = [...cardImages, ...cardImages]
             .sort(() => Math.random() - 0.5)
             .map((card) => ({...card, id: Math.random() }))
 
+        setChoiceOne(null)
+        setChoiceTwo(null)
         setCards(shuffledCards)
         setTurns(0)
     }
@@ -49,7 +52,7 @@ function Memoria (){
     //compare 2 selected cards
     useEffect(() => { 
         if(choiceOne && choiceTwo){
-
+            setDisabled(true)
             if(choiceOne.src == choiceTwo.src){
                 setCards(prevCards => {
                     return prevCards.map(card => {
@@ -62,7 +65,7 @@ function Memoria (){
                 })
                 resetTurn()
             }else{
-                resetTurn()
+                setTimeout(() =>  resetTurn(), 1000)
             }
         }
     }, [choiceOne, choiceTwo])
@@ -74,22 +77,34 @@ function Memoria (){
         setChoiceOne(null)
         setChoiceTwo(null)
         setTurns(prevTurns => prevTurns + 1)
+        setDisabled(false)
     }
+
+    //start a new game automatically
+    useEffect(() => {
+        shuffledCards()
+    }, [])
 
     return(
         <div id="main" className="mx-3">
             <Navigation actual="Memoria Planetaria" paginas={[{nombre: "Jugar", path:"/jugar"}]}/>
             <h1 className="titulo mb-3">MEMORIA PLANETARIA</h1> 
-            <button onClick={shuffledCards}>New Game</button>
-
+            <div className="button-container">
+            <button  onClick={shuffledCards}>New Game</button>
+            </div>
             <div className="card-grid">
                 {cards.map(card => (
                     <SingleCard 
                         key={card.id} 
                         card={card}
                         handleChoice={handleChoice}
+                        flipped={card === choiceOne || card === choiceTwo || card.matched}
+                        disabled={disabled}
                     />
                 ))}
+            </div>
+            <div className="turns-container">
+            <p>Turns: {turns}</p>
             </div>
         </div>
     );

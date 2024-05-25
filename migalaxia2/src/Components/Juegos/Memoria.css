@@ -1,19 +1,18 @@
 
-
-/* base styles */
-/*body {
-  font-family: Raleway, sans-serif;
-  margin: 0;
-  font-size: 1.5em;
-  text-align: center;
-  background: #1b1523;
-  color: #fff;
-}*/
-
-.Memoria {
+/*.Memoria {
   max-width: 860px;
   margin: 40px auto;
+  text-align: center;
+}*/
+
+.button-container, .turns-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Ajusta el margen superior según sea necesario */
 }
+
+
+
 button {
   background: none;
   border: 2px solid #fff;
@@ -56,3 +55,5 @@ button:hover {
   object-fit: cover; /* This ensures the images cover the card without distortion */
   border-radius: 8px;
 }
+
+
