@@ -40,34 +40,65 @@ class Feedback extends React.Component {
     }
 
     render() {
-        let iconLike;
-        let iconDislike;
+        let botonLike;
+        let botonDislike;
+
         if (this.state.userFeedback > 0) { // Like
-            iconLike = <FontAwesomeIcon icon="fas fa-thumbs-up" aria-label="me gusta activado"/>;
-            iconDislike = <FontAwesomeIcon icon="far fa-thumbs-down" aria-label="no me gusta desactivado"/>;
+            botonLike = <button className="btn btn-success mx-2" onClick={this.giveFeedback} data-like="1" aria-pressed="true">
+                {this.item.getLikes()}
+                &nbsp;
+                <span aria-label="me gusta">
+                    <FontAwesomeIcon icon="fas fa-thumbs-up"/>
+                </span>
+            </button>
+
+            botonDislike = <button className="btn btn-danger mx-2" onClick={this.giveFeedback} data-like="-1" aria-pressed="false">
+                {this.item.getDislikes()}
+                &nbsp;
+                <span aria-label="no me gusta">
+                    <FontAwesomeIcon icon="far fa-thumbs-down"/>
+                </span>
+            </button>
         }
         else if (this.state.userFeedback < 0) { // Dislike
-            iconLike = <FontAwesomeIcon icon="far fa-thumbs-up" aria-label="me gusta desactivado"/>;
-            iconDislike = <FontAwesomeIcon icon="fas fa-thumbs-down" aria-label="no me gusta activado"/>;
+            botonLike = <button className="btn btn-success mx-2" onClick={this.giveFeedback} data-like="1" aria-pressed="false">
+                {this.item.getLikes()}
+                &nbsp;
+                <span aria-label="me gusta">
+                    <FontAwesomeIcon icon="far fa-thumbs-up"/>
+                </span>
+            </button>
+
+            botonDislike = <button className="btn btn-danger mx-2" onClick={this.giveFeedback} data-like="-1" aria-pressed="true">
+                {this.item.getDislikes()}
+                &nbsp;
+                <span aria-label="no me gusta">
+                    <FontAwesomeIcon icon="fas fa-thumbs-down"/>
+                </span>
+            </button>
         }
         else { // Neutral
-            iconLike = <FontAwesomeIcon icon="far fa-thumbs-up" aria-label="me gusta desactivado"/>;
-            iconDislike = <FontAwesomeIcon icon="far fa-thumbs-down" aria-label="no me gusta desactivado"/>;
+            botonLike = <button className="btn btn-success mx-2" onClick={this.giveFeedback} data-like="1" aria-pressed="false">
+                {this.item.getLikes()}
+                &nbsp;
+                <span aria-label="me gusta">
+                    <FontAwesomeIcon icon="far fa-thumbs-up"/>
+                </span>
+            </button>
+
+            botonDislike = <button className="btn btn-danger mx-2" onClick={this.giveFeedback} data-like="-1" aria-pressed="false">
+                {this.item.getDislikes()}
+                &nbsp;
+                <span aria-label="no me gusta">
+                    <FontAwesomeIcon icon="far fa-thumbs-down"/>
+                </span>
+            </button>
         }
 
         return (
             <div id="feedback" className="text-center">
-                <button className="btn btn-success mx-2" onClick={this.giveFeedback} data-like="1">
-                    {this.item.getLikes()}
-                    &nbsp;
-                    {iconLike}
-                </button>
-    
-                <button className="btn btn-danger mx-2" onClick={this.giveFeedback} data-like="0">
-                    {this.item.getDislikes()}
-                    &nbsp;
-                    {iconDislike}
-                </button>
+                {botonLike}
+                {botonDislike}
             </div>
         )
     }
