@@ -6,10 +6,10 @@ const Neptune = () => {
 
     return (
         <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={neptuneImage} alt="Neptuno" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} />
+            <img src={neptuneImage} alt="Neptuno" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} tabIndex="2"/>
             <div>
                 <h1 style={{marginLeft: '110px'}}>Neptuno</h1>
-                <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px' }}>
+                <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px' }} tabIndex="3">
                 <li>Velocidad orbital media: 5.43 km/s</li>
                 <li>Masa: 1.024 × 10^26 kg</li>
                 <li>Volumen: 6.254 × 10^13 km³</li>

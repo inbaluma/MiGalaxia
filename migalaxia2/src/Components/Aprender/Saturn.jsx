@@ -6,10 +6,10 @@ const Saturn = () => {
 
     return (
         <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={saturnImage} alt="Saturno" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} />
+            <img src={saturnImage} alt="Saturno" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} tabIndex="2"/>
             <div>
                 <h1 style={{marginLeft: '110px'}}>Saturno</h1>
-                <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px' }}>
+                <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px' }} tabIndex="3">
                 <li>Velocidad orbital media: 9.69 km/s</li>
                 <li>Masa: 5.683 × 10^26 kg</li>
                 <li>Volumen: 8.2713 × 10^14 km³</li>

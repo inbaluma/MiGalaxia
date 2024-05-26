@@ -6,10 +6,10 @@ const Mercury = () => {
 
     return (
         <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={mercurioImage} alt="Mercurio" style={{ maxWidth: '50%', marginRight: '20px' }} />
+            <img src={mercurioImage} alt="Mercurio" style={{ maxWidth: '50%', marginRight: '20px' }} tabIndex="2"/>
             <div>
                 <h1 style={{ marginLeft: '110px' }}>Mercurio</h1>
-                <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px'  }}>
+                <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px'  }} tabIndex="3">
                     <li>Velocidad orbital media: 47,8725 km/s</li>
                     <li>Masa: 3,302×10^23 kg</li>
                     <li>Volumen: 6,083×10^10 km³</li>

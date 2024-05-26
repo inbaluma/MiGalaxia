@@ -6,10 +6,10 @@ const Venus = () => {
 
     return (
         <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={venusImage} alt="Venus" style={{ maxWidth: '50%', marginRight: '20px' }} />
+            <img src={venusImage} alt="Venus" style={{ maxWidth: '50%', marginRight: '20px' }} tabIndex="2" />
             <div>
                 <h1 style={{ marginLeft: '110px' }}>Venus</h1>
-                <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px' }}>
+                <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px' }} tabIndex="3">
                     <li>Velocidad orbital media: 35.02 km/s</li>
                     <li>Masa: 4.867 × 10^24 kg</li>
                     <li>Volumen: 9.28 × 10^11 km³</li>

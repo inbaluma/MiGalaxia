@@ -1,7 +1,17 @@
 import React from 'react'
+import { useNavigate } from "react-router";
 
 export const Thumb = (props) => {
-  const { selected, name, onClick } = props
+  const { selected, name, url,  onClick } = props
+  const navigate = useNavigate();
+
+  function innerOnClick() {
+    if(selected) {
+      navigate(url);
+    }else{
+      onClick()
+    }
+  }
 
   return (
     <div
@@ -10,7 +20,7 @@ export const Thumb = (props) => {
       )}
     >
       <button
-        onClick={onClick}
+        onClick={innerOnClick}
         type="button"
         className="embla-thumbs__slide__number"
       >

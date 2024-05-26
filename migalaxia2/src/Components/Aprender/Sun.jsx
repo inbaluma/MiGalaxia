@@ -6,10 +6,10 @@ const Sun = () => {
 
     return (
         <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={sunImage} alt="Sol" style={{ maxWidth: '50%', marginRight: '20px' }} />
+            <img src={sunImage} alt="Sol" style={{ maxWidth: '50%', marginRight: '20px' }} tabIndex="2"/>
             <div>
                 <h1 style={{marginLeft: '110px'}}>Sol</h1>
-                <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px' }}>
+                <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px' }} tabIndex="3">
                     <li>Distancia media desde la Tierra: 150 millones km</li>
                     <li>Diámetro: 1 391 016 km</li>
                     <li>Superficie: 6,0877 × 10^12 km²</li>
