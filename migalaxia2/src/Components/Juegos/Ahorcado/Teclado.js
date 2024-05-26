@@ -10,9 +10,9 @@ function Teclado({teclasPermitidas, ultimaTecla, cambiarTecla}) {
     const tecladoConstruido = useRef();
     tecladoConstruido.current = false;
     let [filas,setFilas] = useState([<></>,<></>,<></>]);
-    const botones = [...Array(27).keys()].map(i => 
-        <Tecla tecla={alfabetoMayusculas[i]} ultima={ultimaTecla} cambiarTecla={cambiarTecla} activo={teclasPermitidas.includes(alfabetoMayusculas[i])} />
-    )
+    const botones = [...Array(27).keys()].map(i => {
+        return <Tecla key={crypto.randomUUID()} tecla={alfabetoMayusculas[i]} ultima={ultimaTecla} cambiarTecla={cambiarTecla} activo={teclasPermitidas.includes(alfabetoMayusculas[i])}/>;
+    });
     function inicailizarFilas() {
         setFilas([0, 1, 2].map((i) => {
             return (

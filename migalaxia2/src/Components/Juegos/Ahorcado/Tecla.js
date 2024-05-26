@@ -4,15 +4,16 @@ function Tecla({tecla, ultima, cambiarTecla, activo = true}) {
 
     const [boton,setBoton] = useState(<></>);
     const [creado,setCreado] = useState(false);
+    const [activoEstado,setActivo] = useState(activo);
     
     function pulsar() {
         const e = {key : tecla};
         cambiarTecla(e);
         setBoton(
-            <button className="btn btn-primary w-100" type="button" disabled>
-                {tecla}
-            </button>
-            );
+        <button className="btn btn-primary w-100" type="button" disabled>
+            {tecla}
+        </button>
+        );
     }
 
     useEffect(() => {
@@ -24,8 +25,8 @@ function Tecla({tecla, ultima, cambiarTecla, activo = true}) {
                 );
             setCreado(true);
         }
-        activo = activo && (ultima !== tecla);
-        if (!activo) {
+        setActivo(activoEstado && (ultima !== tecla));
+        if (!activoEstado) {
             setBoton(
             <button className="btn btn-primary w-100" type="button" disabled>
                 {tecla}

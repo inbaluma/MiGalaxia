@@ -24,10 +24,9 @@ function MasFotos() {
                         <h3>Elija un día para ver su foto</h3>
                         <Calendar minDate={new Date(fechaInicial)} maxDate={new Date()} onClickDay={setFecha}/>
                     </div>
-                    <VisualizadorFoto fecha={fecha}/>
-                    <div className="d-flex justify-content-center col-lg-2 align-items-center">
+                    <VisualizadorFoto fecha={fecha}>
                         <Link className="btn btn-primary btn-lg align-middle my-3 fs-5" to="../foto">Volver a la foto de hoy</Link>
-                    </div>
+                    </VisualizadorFoto>
                 </main>
             </div>
         </div>

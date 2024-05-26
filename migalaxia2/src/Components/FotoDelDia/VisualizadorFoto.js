@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import './VisualizadorFoto.css'
 
-function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
+function VisualizadorFoto({fecha = new Date(),descarga = false,children}) {
 	const CLAVE = "F0YEUnbX6pJC6gWkSi2TMwPXdCX11TeGLT23ZjF9";
 	const URL = "https://api.nasa.gov/planetary/apod"; //Con GET
 	const MENSAJE_ERROR =
@@ -27,7 +27,6 @@ function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 		setTimeout(saltarADescripcion,250);
 	};
 
-	const fecha = props.fecha;
 	const [boton, setBoton] = useState(<></>);
 	const [descripcion, setDescripcion] = useState("Cargando datos");
 	const [imagen, setImagen] = useState(<></>);
@@ -47,7 +46,7 @@ function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 						<button
 							id="botonDescarga"
 							className={`btn btn-secondary my-3 btn-sm ${
-								props.descarga ? "" : "disabled"
+								descarga ? "" : "disabled"
 							}`}
 						>
 							Descargar foto
@@ -60,7 +59,7 @@ function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 						<button
 							id="botonDescarga"
 							className={`btn btn-secondary my-3 btn-sm ${
-								props.descarga ? "" : "disabled"
+								descarga ? "" : "disabled"
 							}`}
 						>
 							Descargar foto
@@ -75,7 +74,7 @@ function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 							<button
 								id="botonDescarga"
 								className={`btn btn-secondary my-3 btn-sm ${
-									props.descarga ? "" : "disabled"
+									descarga ? "" : "disabled"
 								}`}
 							>
 								Descargar foto
@@ -155,13 +154,13 @@ function VisualizadorFoto(props = {fecha: new Date(),descarga: false}) {
 					</div>
 				</div>
 			</div>
-			<div className="text-center col-lg-1 fs-6">
-				{boton}
-				<br />
-				<p>
+			<div className="d-flex flex-column align-content-center col-lg-3 fs-6">
+				<p className="align-bottom m-0">
 					{tipo === "Imagen" &&
 						"Por ahora no podemos ofrecer descargas de las imágenes"}
 				</p>
+				{boton}
+				{children}
 			</div>
 		</>
 	);
