@@ -6,3 +6,11 @@
 .click {
     text-decoration: none;
 }
+
+[data-bs-theme=dark] .click:visited {
+    color: rgb(202, 163, 240);
+}
+
+[data-bs-theme=light] .click:visited {
+    color: blueviolet;
+}

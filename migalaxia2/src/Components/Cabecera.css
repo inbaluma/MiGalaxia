@@ -22,16 +22,16 @@
     display: inline;
     margin-right: 5px;
   }
+
+  .nav-link {
+    text-align: start;
+  }
 }
 
 /* Para pantallas grandes */
 @media screen and (min-width: 760px) {
   .nav-icon {
     display: block;
-  }
-
-  .btn {
-    justify-self: flex-end;
   }
 }
 

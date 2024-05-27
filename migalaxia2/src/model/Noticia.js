@@ -1,7 +1,6 @@
 class Noticia {
 
     constructor(index, elemento) {
-        index===0 ? console.log(elemento) : console.log();
         this.id = index;
         this.titulo = elemento.title;
         this.img = elemento.urlToImage;

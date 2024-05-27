@@ -21,13 +21,12 @@ class Palabra {
     }
 
     getHeading() {
-        let heading;
-        if (this.empieza) {
-            heading = "Empieza por la '" + this.letra + "'";
-        }
-        else {
-            heading = "Contiene la '" + this.letra + "'";
-        }
+        let heading = this.tipo + " que ";
+
+        if (this.empieza) heading += "empieza por la ";
+        else heading += "contiene la ";
+        
+        heading += this.letra;
 
         return heading;
     }

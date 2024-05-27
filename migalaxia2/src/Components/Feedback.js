@@ -44,7 +44,7 @@ class Feedback extends React.Component {
         let botonDislike;
 
         if (this.state.userFeedback > 0) { // Like
-            botonLike = <button className="btn btn-success mx-2" onClick={this.giveFeedback} data-like="1" aria-pressed="true">
+            botonLike = <button className="btn btn-success mx-2" onClick={this.giveFeedback} data-like="1" aria-pressed="true" data-toggle="tooltip" title="Me gusta">
                 {this.item.getLikes()}
                 &nbsp;
                 <span aria-label="me gusta">
@@ -52,7 +52,7 @@ class Feedback extends React.Component {
                 </span>
             </button>
 
-            botonDislike = <button className="btn btn-danger mx-2" onClick={this.giveFeedback} data-like="-1" aria-pressed="false">
+            botonDislike = <button className="btn btn-danger mx-2" onClick={this.giveFeedback} data-like="-1" aria-pressed="false" data-toggle="tooltip" title="No me gusta">
                 {this.item.getDislikes()}
                 &nbsp;
                 <span aria-label="no me gusta">
@@ -61,7 +61,7 @@ class Feedback extends React.Component {
             </button>
         }
         else if (this.state.userFeedback < 0) { // Dislike
-            botonLike = <button className="btn btn-success mx-2" onClick={this.giveFeedback} data-like="1" aria-pressed="false">
+            botonLike = <button className="btn btn-success mx-2" onClick={this.giveFeedback} data-like="1" aria-pressed="false" data-toggle="tooltip" title="Me gusta">
                 {this.item.getLikes()}
                 &nbsp;
                 <span aria-label="me gusta">
@@ -69,7 +69,7 @@ class Feedback extends React.Component {
                 </span>
             </button>
 
-            botonDislike = <button className="btn btn-danger mx-2" onClick={this.giveFeedback} data-like="-1" aria-pressed="true">
+            botonDislike = <button className="btn btn-danger mx-2" onClick={this.giveFeedback} data-like="-1" aria-pressed="true" data-toggle="tooltip" title="No me gusta">
                 {this.item.getDislikes()}
                 &nbsp;
                 <span aria-label="no me gusta">
@@ -78,7 +78,7 @@ class Feedback extends React.Component {
             </button>
         }
         else { // Neutral
-            botonLike = <button className="btn btn-success mx-2" onClick={this.giveFeedback} data-like="1" aria-pressed="false">
+            botonLike = <button className="btn btn-success mx-2" onClick={this.giveFeedback} data-like="1" aria-pressed="false" data-toggle="tooltip" title="Me gusta">
                 {this.item.getLikes()}
                 &nbsp;
                 <span aria-label="me gusta">
@@ -86,7 +86,7 @@ class Feedback extends React.Component {
                 </span>
             </button>
 
-            botonDislike = <button className="btn btn-danger mx-2" onClick={this.giveFeedback} data-like="-1" aria-pressed="false">
+            botonDislike = <button className="btn btn-danger mx-2" onClick={this.giveFeedback} data-like="-1" aria-pressed="false" data-toggle="tooltip" title="No me gusta">
                 {this.item.getDislikes()}
                 &nbsp;
                 <span aria-label="no me gusta">

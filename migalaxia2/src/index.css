@@ -21,22 +21,30 @@ code {
 /* Estilos especificos del modo claro */
 [data-bs-theme=light] {
   .text-secondary {
-    color:rgb(87, 87, 87);
+    color:rgb(87, 87, 87) !important;
   }
 
   .link-secondary {
-    color:rgb(87, 87, 87);
+    color:rgb(87, 87, 87) !important;
+  }
+
+  .link-secondary:visited {
+    color:rgb(97, 65, 109) !important;
   }
 }
 
 /* Estilos especificos del modo oscuro */
 [data-bs-theme=dark] {
-  .text-secondary-dark {
-    color:rgb(172, 172, 172);
+  .text-secondary {
+    color:rgb(172, 172, 172) !important;
   }
 
   .link-secondary {
-    color:rgb(172, 172, 172);
+    color:rgb(172, 172, 172) !important;
+  }
+
+  .link-secondary:visited {
+    color:rgb(173, 116, 194) !important;
   }
 }
 

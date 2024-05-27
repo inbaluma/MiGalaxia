@@ -24,7 +24,6 @@ function Noticias() {
         const url2 = 'https://saurav.tech/NewsAPI/top-headlines/category/science/us.json'
         let data = await fetch(url2);
         let parsedData = await data.json();
-        console.log(parsedData);
         const articles = [];
         parsedData.articles.forEach((element, i) => {
             articles.push(new Noticia(i, element))
