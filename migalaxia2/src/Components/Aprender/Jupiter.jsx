@@ -6,10 +6,10 @@ const Jupiter = () => {
 
     return (
         <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={jupiterImage} alt="Jupiter" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} tabIndex="2"/>
+            <img src={jupiterImage} alt="Imagen de Jupiter" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} tabIndex="0"/>
             <div>
                 <h1 style={{marginLeft: '110px'}}>Jupiter</h1>
-                <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px' }} tabIndex="3">
+                <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px' }} tabIndex="1">
                 <li>Velocidad orbital media: 13.07 km/s</li>
                 <li>Masa: 1.898 × 10^27 kg</li>
                 <li>Volumen: 1.43128 × 10^15 km³</li>

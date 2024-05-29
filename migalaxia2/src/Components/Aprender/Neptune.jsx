@@ -6,7 +6,7 @@ const Neptune = () => {
 
     return (
         <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={neptuneImage} alt="Neptuno" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} tabIndex="2"/>
+            <img src={neptuneImage} alt="Imagen de Neptuno" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} tabIndex="2"/>
             <div>
                 <h1 style={{marginLeft: '110px'}}>Neptuno</h1>
                 <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px' }} tabIndex="3">

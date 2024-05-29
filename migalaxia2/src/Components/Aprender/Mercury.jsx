@@ -6,7 +6,7 @@ const Mercury = () => {
 
     return (
         <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={mercurioImage} alt="Mercurio" style={{ maxWidth: '50%', marginRight: '20px' }} tabIndex="2"/>
+            <img src={mercurioImage} alt="Imagen de Mercurio" style={{ maxWidth: '50%', marginRight: '20px' }} tabIndex="2"/>
             <div>
                 <h1 style={{ marginLeft: '110px' }}>Mercurio</h1>
                 <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px'  }} tabIndex="3">

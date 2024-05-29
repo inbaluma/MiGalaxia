@@ -18,11 +18,15 @@ export const Thumb = (props) => {
       className={'embla-thumbs__slide'.concat(
         selected ? ' embla-thumbs__slide--selected' : ''
       )}
+
+      role='button'
+      aria-pressed={selected}
     >
       <button
         onClick={innerOnClick}
         type="button"
         className="embla-thumbs__slide__number"
+        aria-label={`Seleccionar ${name}`}
       >
         {name}
       </button>

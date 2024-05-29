@@ -9,7 +9,11 @@ function Bienvenido() {
             <div style={{ margin: 'auto', width: '50%' }}>
                 <p style={{ fontSize: '1.5rem' }}>El lugar perfecto para aprender sobre nuestra galaxia</p>
             </div>
-            <img src={imagenBienvenida} alt="Imagen Bienvenida" style={{ maxWidth: '100%', marginTop: '20px' }} />
+            <img 
+                src={imagenBienvenida} 
+                alt="Imagen representativa de bienvenida a MiGalaxia, un sitio para aprender sobre nuestra galaxia" 
+                style={{ maxWidth: '100%', marginTop: '20px' }} 
+            />
         </div>
     )
 }

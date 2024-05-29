@@ -6,7 +6,7 @@ const Sun = () => {
 
     return (
         <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={sunImage} alt="Sol" style={{ maxWidth: '50%', marginRight: '20px' }} tabIndex="2"/>
+            <img src={sunImage} alt="Imagen del Sol" style={{ maxWidth: '50%', marginRight: '20px' }} tabIndex="2"/>
             <div>
                 <h1 style={{marginLeft: '110px'}}>Sol</h1>
                 <ul style={{ fontSize: '1.8rem', lineHeight: '1.5', marginLeft: '100px', marginTop: '50px' }} tabIndex="3">
