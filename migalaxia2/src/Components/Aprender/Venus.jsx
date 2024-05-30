@@ -1,11 +1,15 @@
 import React from 'react';
-import venusImage from './Venus.jpg'; 
+import venusImage from './Venus.jpg';
+import Navigation from "../Navigation";
 
 const Venus = () => {
     document.title = "Aprender sobre Venus";
 
     return (
-        <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
+        <div id="main" style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+            <div style={{ position: 'absolute', top: '10px', left: '10px', zIndex: 1 }}>
+                <Navigation actual="Planeta Venus" paginas={[{ nombre: "Aprender", path: "/Aprender" }]}/>
+            </div>
             <img src={venusImage} alt="Imagen de Venus" style={{ maxWidth: '50%', marginRight: '20px' }} tabIndex="2" />
             <div>
                 <h1 style={{ marginLeft: '110px' }}>Venus</h1>

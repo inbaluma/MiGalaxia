@@ -86,7 +86,7 @@ function Memoria (){
     }, [])
 
     return(
-        <div id="main" className="mx-3">
+        <div id="main" className="memoria-container">
             <Navigation actual="Memoria Planetaria" paginas={[{nombre: "Jugar", path:"/jugar"}]}/>
             <h1 className="titulo mb-3">MEMORIA PLANETARIA</h1> 
             <div className="button-container">

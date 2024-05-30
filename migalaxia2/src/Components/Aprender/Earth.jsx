@@ -1,11 +1,15 @@
 import React from 'react';
 import earthImage from './Earth.jpg'; 
+import Navigation from "../Navigation";
 
 const Earth = () => {
     document.title = "Aprender sobre la Tierra";
 
     return (
-        <div id="main" style={{ display: 'flex', alignItems: 'center' }}>
+        <div id="main" style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+            <div style={{ position: 'absolute', top: '10px', left: '10px', zIndex: 1 }}>
+                <Navigation actual="Planeta Tierra" paginas={[{nombre: "Aprender", path:"/Aprender"}]}/>
+            </div>
             <img src={earthImage} alt="Imagen de la Tierra" style={{ maxWidth: '50%', marginRight: '20px', height: '750px' }} tabIndex="2"/>
             <div>
                 <h1 style={{marginLeft: '110px'}}>Tierra</h1>
