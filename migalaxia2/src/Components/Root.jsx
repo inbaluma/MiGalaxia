@@ -7,18 +7,13 @@ const Root = () => {
 
   function changeMode() {
     const body = document.getElementsByTagName("body")[0];
-    let texto;
     if (mode === "dark") {
       setMode("light");
       body.setAttribute("data-bs-theme", "light");
-      texto = "Cambiar a modo oscuro";
     } else {
       setMode("dark");
       body.setAttribute("data-bs-theme", "dark");
-      texto = "Cambiar a modo claro";
     }
-
-    return texto;
   }
 
   return (

@@ -49,23 +49,27 @@ function Cabecera(props) {
         {componentes}
     </ul>
 
-    const changeMode = (e) => {
-        const text = props.changeMode(e.target);
-        e.target.innerText = text;
+    const changeMode = () => {
+        props.changeMode();
     }
 
     return (
         <header className='gradient sticky-top'>
             <HashLink to="#main" className='texto-lector-pantalla'>Saltar al contenido principal</HashLink>
-            <nav id="cabecera" className="navbar navbar-expand-md gradient" role="navigation" aria-label='Primaria'>
+            <nav id="cabecera" className="navbar navbar-expand-md gradient" role="navigation" aria-label='Menú principal'>
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/" data-page="0">MiGalaxia</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir navegación">
-                        {<FontAwesomeIcon icon="fas fa-bars text-light"/>}
+                        <FontAwesomeIcon icon="fas fa-bars text-light"/>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         {ul}
-                        <button className='btn btn-sm btn-secondary' onClick={changeMode}>Cambiar a modo claro</button>
+                        <form>
+                            <select onChange={changeMode} className='form-select'>
+                                <option value="1" selected>Modo oscuro</option>
+                                <option value="0">Modo claro</option>
+                            </select>
+                        </form>
                     </div>
                 </div>
             </nav>

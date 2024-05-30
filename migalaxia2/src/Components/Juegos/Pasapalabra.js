@@ -157,23 +157,23 @@ function Pasapalabra() {
                     <p id="definicion">{palabra.definicion}</p>
                     <div className="row">
                         <div className="col-lg-6">
-                            <div className="row">
+                            <form className="row" action={comprobar}>
                                 <label id="label-input-palabra" htmlFor="inputPalabra" className="form-label" aria-label={palabra.getLectura()}>Introduzca la palabra:</label>
                                 <div className="col-auto">
-                                    <input type="text" id="inputPalabra" className="form-control form-control-lg"/>
+                                    <input type="text" id="inputPalabra" className="form-control form-control-lg" aria-describedby="mensaje"/>
                                 </div>
 
                                 <div className="col-auto">
                                     <button id="comprobar-boton" onClick={comprobar} className="btn btn-primary me-2 my-1">Comprobar</button>
                                     <button id="pasapalabra-boton" onClick={siguientePalabra} className="btn btn-secondary me-2 my-1">Pasapalabra</button>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                         <div className="col-lg-6">
                             <p>Número de intentos restantes: <strong id="intentosRestantes">{palabra.getIntentosRestantes()}</strong></p>
                         </div>
                     </div>
-                    <p id="mensaje"></p>
+                    <p role="alert" id="mensaje"></p>
                     <p>
                         Palabras acertadas: <strong id="acertadas">{palabras.getAciertos()}</strong>.
                         Palabras erróneas: <strong id="erroneas">{palabras.getErroneos()}</strong>.
