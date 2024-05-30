@@ -90,7 +90,7 @@ function Memoria (){
             <Navigation actual="Memoria Planetaria" paginas={[{nombre: "Jugar", path:"/jugar"}]}/>
             <h1 className="titulo mb-3">MEMORIA PLANETARIA</h1> 
             <div className="button-container">
-            <button  onClick={shuffledCards}>New Game</button>
+            <button  onClick={shuffledCards} aria-label="Iniciar nuevo juego">New Game</button>
             </div>
             <div className="card-grid">
                 {cards.map(card => (

@@ -11,7 +11,7 @@ function FotoDelDia() {
 			<main className="row">
 				<div className="col-lg-3"></div>
 				<VisualizadorFoto fecha={fecha}>
-					<Link className="btn btn-primary btn-lg align-middle" to="masfotos">Más fotos</Link>
+					<Link className="btn btn-primary btn-lg align-middle" to="masfotos" aria-label="Ver más fotos">Más fotos</Link>
 				</VisualizadorFoto>	
 			</main>
 		</div>
