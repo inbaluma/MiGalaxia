@@ -1,7 +1,7 @@
 import { useState,useEffect, useRef } from "react";
 import Tecla from "./Tecla";
 
-function Teclado({teclasPermitidas, ultimaTecla, cambiarTecla}) {
+function Teclado({teclasPermitidas, ultimaTecla, cambiarTecla, setMensaje}) {
     //Hacer que construya el teclado con useEffect
     const alfabetoMayusculas = [
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
@@ -9,7 +9,7 @@ function Teclado({teclasPermitidas, ultimaTecla, cambiarTecla}) {
     ];
     const tecladoConstruido = useRef();
     tecladoConstruido.current = false;
-    let [filas,setFilas] = useState([<></>,<></>,<></>]);
+    const [filas,setFilas] = useState([<></>,<></>,<></>]);
     const botones = [...Array(27).keys()].map(i => {
         return <Tecla key={crypto.randomUUID()} tecla={alfabetoMayusculas[i]} ultima={ultimaTecla} cambiarTecla={cambiarTecla} activo={teclasPermitidas.includes(alfabetoMayusculas[i])}/>;
     });
@@ -45,10 +45,12 @@ function Teclado({teclasPermitidas, ultimaTecla, cambiarTecla}) {
             tecladoConstruido.current = true;
             inicailizarFilas();
         }
+        if (ultimaTecla === ""){
+            setMensaje("Pulse una tecla para ver si esta en la palabra");
+        }
     },[ultimaTecla]);
     return(
         <div id="teclado" className="col-md">
-            <p className="fw-semibold">Puedes usar los botones o usar el teclado</p>
             {filas}
         </div>
     );

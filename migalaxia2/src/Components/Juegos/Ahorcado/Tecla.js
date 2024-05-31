@@ -10,7 +10,7 @@ function Tecla({tecla, ultima, cambiarTecla, activo = true}) {
         const e = {key : tecla};
         cambiarTecla(e);
         setBoton(
-        <button className="btn btn-primary w-100" type="button" disabled>
+        <button className="btn btn-primary w-100" type="button" aria-label={tecla.toLowerCase()} disabled>
             {tecla}
         </button>
         );
@@ -19,7 +19,7 @@ function Tecla({tecla, ultima, cambiarTecla, activo = true}) {
     useEffect(() => {
         if (!creado) {
             setBoton(
-                <button className="btn btn-primary w-100" type="button" onClick={pulsar}>
+                <button className="btn btn-primary w-100" type="button" aria-label={tecla.toLowerCase()} onClick={pulsar}>
                     {tecla}
                 </button>
                 );
@@ -28,7 +28,7 @@ function Tecla({tecla, ultima, cambiarTecla, activo = true}) {
         setActivo(activoEstado && (ultima !== tecla));
         if (!activoEstado) {
             setBoton(
-            <button className="btn btn-primary w-100" type="button" disabled>
+            <button className="btn btn-primary w-100" type="button" aria-label={tecla.toLowerCase()} disabled>
                 {tecla}
             </button>
             )
