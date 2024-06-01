@@ -11,8 +11,8 @@ function NoticiaPreview(props) {
         <div className="col-lg-3 col-md-4 col-sm-6">
             <div className='card mx-2 mb-2'>
                 <div className='card-body'>
-                    <Link className="click" to={""+noticia.id} lang="en">
-                        <h2 className='titulo noticia-preview mb-3'>{noticia.titulo}</h2>
+                    <Link className="click" to={""+noticia.id}>
+                        <h2 className='titulo noticia-preview mb-3' lang="en">{noticia.titulo}</h2>
                         <img className="card-img mb-3 click" src={noticia.img} alt=""/>
                     </Link>
                     <Feedback item={noticia}/>

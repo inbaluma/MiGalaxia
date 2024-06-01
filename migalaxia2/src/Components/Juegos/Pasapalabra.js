@@ -30,20 +30,19 @@ function Pasapalabra() {
         new Palabra('K', 'Kelvin', 'Unidad de medida de temperatura.'),
         new Palabra('L', 'Luz', 'Radiación electromagnética visible al ojo humano.'),
         new Palabra('M', 'Meteorito', 'Fragmento de un cuerpo celeste que cae sobre la Tierra, o sobre un astro cualquiera.'),
-        //new Palabra('N', ['Nave espacial', 'Nave', 'Astronave'], 'Vehículo capaz de navegar más allá de la atmósfera terrestre.'),
         new Palabra('N', 'Nave', 'Vehículo capaz de navegar más allá de la atmósfera terrestre.'),
         new Palabra('Ñ', 'Año luz', 'Distancia que viaja la luz en un año terrestre.', false, "Expresión de 2 palabras"),
         new Palabra('O', 'Órbita', 'Trayectoria curva que describe un cuerpo en su movimiento alrededor de un centro.'),
-        new Palabra('P', 'Planeta Enano', 'Un cuerpo celeste que orbita alrededor del Sol, posee suficiente masa, no ha limpiado su órbita de otros objetos y no es un satélite de otro planeta.'),
-        new Palabra('Q', 'Quantum', '...'),
-        new Palabra('R', 'Rayos cósmicos', 'Partículas subatómicas extremadamente energéticas que viajan por el universo con velocidades cercanas a la de la luz.'),
+        new Palabra('P', 'Planeta Enano', 'Un cuerpo celeste que orbita alrededor del Sol, posee suficiente masa, no ha limpiado su órbita de otros objetos y no es un satélite de otro planeta.', "Expresión de 2 palabras"),
+        new Palabra('Q', 'Quantum', 'En latín, cantidad indivisible de energía, proporcional a la frecuencia del campo al que se asocia.'),
+        new Palabra('R', 'Rayos cósmicos', 'Partículas subatómicas extremadamente energéticas que viajan por el universo con velocidades cercanas a la de la luz.', "Expresión de 2 palabras"),
         new Palabra('S', 'Solsticio', 'Cada uno de los dos momentos anuales en que el Sol se halla en uno de los dos trópicos, lo cual sucede del 21 al 22 de junio para el de Cáncer, y del 21 al 22 de diciembre para el de Capricornio, y en los que la diferencia entre la duración del día y de la noche es mayor.'),
         new Palabra('T', 'Telescopio', 'Instrumento que consta de lentes o espejos curvos y que permite ver agrandada una imagen de un objeto lejano, en especial los cuerpos celestes.'),
         new Palabra('U', 'Universo', 'Espacio exterior a la Tierra.'),
         new Palabra('V', 'Venus', 'El segundo planeta del sistema solar en orden de proximidad al Sol'),
-        new Palabra('W', 'Hawking', 'Apellido de un físico que hizo grandes descubrimientos a cerca de los abujeros negros.', false),
-        new Palabra('X', 'Rayos X', '...', false),
-        new Palabra('Y', '', ''),
+        new Palabra('W', 'Hawking', 'Apellido de un físico que hizo grandes descubrimientos a cerca de los abujeros negros y obtuvo 12 doctorados.', false),
+        new Palabra('X', 'Kerolox', 'Nombre común para una combinación de combustible y comburente utilizada para propulsar cohetes espaciales.', false),
+        new Palabra('Y', 'Mercury', 'Nombre del primer programa espacial tripulado de los Estados Unidos.', false),
         new Palabra('Z', 'Zodíaco', 'La franja de la esfera celeste que se extiende, aproximadamente, unos 9 grados a ambos lados de la eclíptica (el plano de la órbita terrestre proyectado sobre el firmamento). Por esta zona se desplazan el Sol, la Luna y los planetas en su movimiento con respecto al fondo de estrellas.'),
     ]);
 
@@ -61,11 +60,11 @@ function Pasapalabra() {
         else {
             document.getElementById("intentosRestantes").innerText = palabra.getIntentosRestantes();
             if (palabra.getIntentosRestantes() > 1)
-                mensaje.innerText = "La palabra introducida '"+input+"' es incorrecta, te quedan "+palabra.getIntentosRestantes()+" intentos";
+                mensaje.innerText = "La palabra introducida '"+input+"' es incorrecta, te quedan "+palabra.getIntentosRestantes()+" intentos.";
             else if (palabra.getIntentosRestantes() === 1)
-                mensaje.innerText = "La palabra introducida '"+input+"' es incorrecta, te queda 1 intento";
+                mensaje.innerText = "La palabra introducida '"+input+"' es incorrecta, te queda 1 intento.";
             else {
-                mensaje.innerText = "La palabra introducida '"+input+"' es incorrecta, se agotaron los intentos. La palabra correcta era '"+palabra.getPalabra()+"'";
+                mensaje.innerText = "La palabra introducida '"+input+"' es incorrecta, se agotaron los intentos. La palabra correcta era '"+palabra.getPalabra()+"'.";
                 siguientePalabra();
             }
         }
@@ -93,7 +92,6 @@ function Pasapalabra() {
             document.getElementById("titulo").innerText = palabra.getHeading();
             document.getElementById("definicion").innerText = palabra.getDefinicion();
             document.getElementById("intentosRestantes").innerText = palabra.getIntentosRestantes();
-            document.getElementById("label-input-palabra").setAttribute("aria-label", palabra.getLectura());
 
             document.getElementById("inputPalabra").value = "";
         }
@@ -103,68 +101,63 @@ function Pasapalabra() {
     }
 
     const displayLetrasHTML = () => {
-        const letras = palabras.getNextLetras();
-
-            let innerHTML = "";
-            for(let i = 0; i < letras.length; i++) {
-                let datos = {};
-                switch (letras[i].estado) {
-                    case 1: // Palabra acertada
-                        datos.estado = "Correcto";
-                        datos.formato = "text-bg-success";
-                    break;
-                    case -1: // Palabra incorrecta
-                        datos.estado = "Incorrecto";
-                        datos.formato = "text-bg-danger";
-                    break;
-                    default:
-                        datos.estado = "Disponible";
-                        datos.formato = "text-bg-tertiary";
-                }
-                innerHTML += "<span class='badge mx-1 "+ datos.formato +"'>" +
-                    letras[i].letra + "<br/>" +
-                    datos.estado +
-                "</span>"
+        let display = "<h4>Resumen del juego</h4>";
+        const estados = palabras.getEstadoLetras();
+        for (let i = 0; i < estados.length; i++) {
+            //console.log(estados[i]);
+            display += "<h5>"+estados[i].estado+"</h5>";
+            const letras = estados[i].letras;
+            if (letras == null || letras.length === 0) {
+                display += "Ninguna palabra";
+                continue;
             }
-        return innerHTML;
+            for (let j = 0; j < letras.length; j++) {
+                display += "<span class='badge mx-1 "+estados[i].clase+"'>"+letras[j]+"</span>";
+            }
+        }
+        return display;
     }
 
     let palabra = palabras.getNextPalabra();
 
-    const letras = palabras.getNextLetras();
+    const estados = palabras.getEstadoLetras();
     const displayLetras = <div id="letras-siguientes">
+        <h4>Resumen del juego</h4>
         {
-            letras.map(l => {
+            estados.map(estado => {
                 return (
-                    <span className="badge mx-1">
-                        {l.letra}
-                        <br/>
-                        Disponible
-                    </span>
+                    <>
+                    <h5>{estado.estado}</h5>
+                    {estado.letras == null || estado.letras.length === 0 ? "Ninguna palabra" :
+                    estado.letras.map(letra => {
+                        return (<span className={"badge mx-1 " + estado.clase}>{letra}</span>)
+                    })
+                    }
+                    </>
                 )
             })
+            
         }
     </div>
 
-
     return (
-        <main id="main" className="mx-3">
+        <main id="main" aria-live="polite" role="document" className="mx-3">
             <Navigation actual="Pasapalabra" paginas={[{nombre: "Jugar", path:"/jugar"}]}/>
             <h1 className="titulo mb-3">Pasapalabra</h1>
             <div className="card mx-3">
                 <div className="card-body">
-                    <h2 className="titulo" id="titulo">{palabra.getHeading()}</h2>
-                    <p id="definicion">{palabra.definicion}</p>
+                    <h2 className="titulo" id="titulo" tabIndex={0}>{palabra.getHeading()}</h2>
+                    <p id="definicion" tabIndex={0}>{palabra.definicion}</p>
                     <div className="row">
                         <div className="col-lg-6">
                             <form className="row" action={comprobar}>
-                                <label id="label-input-palabra" htmlFor="inputPalabra" className="form-label" aria-label={palabra.getLectura()}>Introduzca la palabra:</label>
+                                <label id="label-input-palabra" htmlFor="inputPalabra" className="form-label">Introduzca la palabra:</label>
                                 <div className="col-auto">
                                     <input type="text" id="inputPalabra" className="form-control form-control-lg" aria-describedby="mensaje"/>
                                 </div>
 
                                 <div className="col-auto">
-                                    <button id="comprobar-boton" onClick={comprobar} className="btn btn-primary me-2 my-1">Comprobar</button>
+                                    <button id="comprobar-boton" type="submit" onClick={comprobar} className="btn btn-primary me-2 my-1">Comprobar</button>
                                     <button id="pasapalabra-boton" onClick={siguientePalabra} className="btn btn-secondary me-2 my-1">Pasapalabra</button>
                                 </div>
                             </form>
@@ -173,7 +166,7 @@ function Pasapalabra() {
                             <p>Número de intentos restantes: <strong id="intentosRestantes">{palabra.getIntentosRestantes()}</strong></p>
                         </div>
                     </div>
-                    <p role="alert" id="mensaje"></p>
+                    <p id="mensaje" role="status"></p>
                     <p>
                         Palabras acertadas: <strong id="acertadas">{palabras.getAciertos()}</strong>.
                         Palabras erróneas: <strong id="erroneas">{palabras.getErroneos()}</strong>.

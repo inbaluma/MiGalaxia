@@ -36,6 +36,39 @@ class SetPalabras {
         return letras;
     }
 
+    getEstadoLetras() {
+        const correctas = [];
+        const incorrectas = [];
+        const restantes = [];
+        
+        for (let i = 0; i < this.size; i++) {
+            const palabra = this.palabras[i];
+            if (palabra.isAcertada()) correctas.push(palabra.getLetra());
+            else if(palabra.isIncorrecta()) incorrectas.push(palabra.getLetra());
+            else restantes.push(palabra.getLetra());
+        }
+
+        const letras = [
+            {
+                estado: "Palabras correctas",
+                letras: correctas,
+                clase: "text-bg-success"
+            },
+            {
+                estado: "Palabras incorrectas",
+                letras: incorrectas,
+                clase: "text-bg-danger"
+            },
+            {
+                estado: "Palabras restantes",
+                letras: restantes,
+                clase: "text-bg-tertiary"
+            }
+        ];
+
+        return letras;
+    }
+
     checkPalabra(palabra) {
         const check = this.palabra.checkPalabra(palabra);
         if (check) {
