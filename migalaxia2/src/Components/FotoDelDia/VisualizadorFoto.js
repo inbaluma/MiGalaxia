@@ -27,6 +27,7 @@ function VisualizadorFoto({fecha = new Date(),descarga = false,children}) {
 		setTimeout(saltarADescripcion,250);
 	};
 
+	const [aria,setAria] = useState("Cargando foto de hoy");
 	const [boton, setBoton] = useState(<></>);
 	const [descripcion, setDescripcion] = useState("Cargando datos");
 	const [imagen, setImagen] = useState(<></>);
@@ -35,11 +36,13 @@ function VisualizadorFoto({fecha = new Date(),descarga = false,children}) {
 
 	useEffect(() => {
 		const cargarImagenAPI = async () => {
+			setAria(`Cargando imagen de ${fecha.getDate()} de ${fecha.getMonth()+1} de ${fecha.getFullYear()}`);
 			setImagen(<h3>Cargando imagen, espere un momento</h3>);
 			try {
 				console.log("API llamada: " + obtenerURLAPI());
 				const response = await fetch(obtenerURLAPI());
 				if (response.status === 429){
+					setAria("Se han realizado demasiadas peticiones, espere hasta la próxima hora");
 					setImagen(<h3>Demasiadas peticiones, espere hasta la próxima hora</h3>);
 					setDescripcion("Este mensaje significa que nos hemos pasado de llamadas a la API");
 					setBoton(
@@ -53,6 +56,7 @@ function VisualizadorFoto({fecha = new Date(),descarga = false,children}) {
 						</button>
 					);
 				} else if (!response.ok) {
+					setAria(MENSAJE_ERROR);
 					setImagen(<h3>{MENSAJE_ERROR}</h3>);
 					setDescripcion("No se ha podido cargar la descripción");
 					setBoton(
@@ -70,6 +74,7 @@ function VisualizadorFoto({fecha = new Date(),descarga = false,children}) {
 					setDescripcion(datosImagen.explanation);
 					let URLDatos = datosImagen.url;
 					if (datosImagen.media_type === "image") {
+						setAria("Imagen cargada correctamente");
 						setBoton(
 							<button
 								id="botonDescarga"
@@ -90,6 +95,7 @@ function VisualizadorFoto({fecha = new Date(),descarga = false,children}) {
 						/>
 						);
 					} else {
+						setAria("Vídeo cargado correctamente, título: ");
 						setTipo("Vídeo");
 						setBoton(
 							<button
@@ -134,7 +140,7 @@ function VisualizadorFoto({fecha = new Date(),descarga = false,children}) {
 					Todos los vídeos e imágenes proceden de "Astronomy Picture
 					of the Day" de la NASA.
 				</p>
-				<p className=" d-inline-flex gap-1">
+				<p className="d-inline-flex gap-1">
 					<a
 						className="btn btn-primary btn-lg my-2"
 						data-bs-toggle="collapse"
@@ -162,6 +168,9 @@ function VisualizadorFoto({fecha = new Date(),descarga = false,children}) {
 				{boton}
 				{children}
 			</div>
+			<p aria-live="assertive" style={{opacity: 0}}>
+				{aria}
+			</p>
 		</>
 	);
 }

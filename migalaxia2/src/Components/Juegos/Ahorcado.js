@@ -63,7 +63,7 @@ function Ahorcado (){
                 <h1 className="titulo mb-3">Ahorcado</h1>
                 <div className="card mx-3">
                     <div className="card-body">
-                        <span tabIndex={0}>Puedes usar el teclado o los botones</span>
+                        <span tabIndex={0}>Puedes usar el teclado o los botones para jugar</span>
                         <Palabra palabra={palabra} teclaPulsada={ultimaTecla} letrasPermitidas={alfabetoMayusculas} setCompletado={setCompletado}>
                             <>Intentos: {intentos}</>
                             <>{botonReiniciar}</>

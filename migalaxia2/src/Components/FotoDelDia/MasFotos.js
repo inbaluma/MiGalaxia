@@ -22,7 +22,8 @@ function MasFotos() {
                 <main className="row">
                     <div className="d-flex flex-column justify-content-center col-lg-3 align-items-center">
                         <h3>Elija un día para ver su foto</h3>
-                        <Calendar minDate={new Date(fechaInicial)} maxDate={new Date()} onClickDay={setFecha}/>
+                        <Calendar minDate={new Date(fechaInicial)} maxDate={new Date()} onClickDay={setFecha}
+                        next2AriaLabel="Ir al año siguiente" nextAriaLabel="Ir al mes siguiente" prev2AriaLabel="Ir al año anterior" prevAriaLabel="Ir al mes anterior" navigationAriaLabel="Abrir menú de calendario"/>
                     </div>
                     <VisualizadorFoto fecha={fecha}>
                         <Link className="btn btn-primary btn-lg align-middle my-3 fs-5" to="../foto">Volver a la foto de hoy</Link>
