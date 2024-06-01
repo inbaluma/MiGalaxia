@@ -1,4 +1,6 @@
 .card-grid {
+  margin: 0 auto;
+  max-width: 800px;
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Cuatro columnas con ancho igual */
   grid-template-rows: repeat(3, auto); /* Tres filas con altura automática según el contenido */
