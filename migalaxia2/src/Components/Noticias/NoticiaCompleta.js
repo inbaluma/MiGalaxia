@@ -40,13 +40,13 @@ function NoticiaCompleta(props) {
     return (
         <div id="main" className="mx-3">
             <Navigation actual={noticia.titulo} paginas={[{nombre: "Noticias", path:"/noticias"}]}/>
-            <div id="noticia" aria-live="polite" lang="en">
+            <article id="noticia" aria-live="polite" lang="en">
                 <h1 className="titulo">{noticia.titulo}</h1>
                 <div className="container text-center mb-2">
                     <img className="img-fluid rounded" src={noticia.img} alt={noticia.descripcion_imagen}/>
                 </div>
                 {secciones} 
-            </div>
+            </article>
             <hr/>
             <div aria-live="polite" aria-relevant="additions">
                 <p className="text-secondary text-center">¿Te ha gustado la noticia?</p>
