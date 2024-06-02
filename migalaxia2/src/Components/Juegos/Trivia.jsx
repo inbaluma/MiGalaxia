@@ -103,11 +103,11 @@ const Trivia = () => {
                             {question.option4}
                         </li>
                     </ul>
-                    <button onClick={next} tabIndex={0}>Siguiente</button>
+                    <button onClick={next} tabIndex={0} aria-label = "Siguiente pregunta">Siguiente</button>
                     <div className="indice">{index + 1} de {data.length} preguntas</div></>}
                 {result ? <>
                     <h2>Tu puntuación es {score} de {data.length}</h2>
-                    <button onClick={reset} tabIndex={0}>Reiniciar</button>
+                    <button onClick={reset} tabIndex={0} aria-label = "Reiniciar Trivia">Reiniciar</button>
                 </> : <></>}
 
             </div>
