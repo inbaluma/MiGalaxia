@@ -16,24 +16,24 @@ function Teclado({teclasPermitidas, ultimaTecla, cambiarTecla, setMensaje}) {
     function inicailizarFilas() {
         setFilas([0, 1, 2].map((i) => {
             return (
-                <div className="row gx-1 my-1">
-                    <div className="col">
+                <div className="row gx-1 my-2">
+                    <div className="col mx-1">
                         {botones[0 + 9 * i]}
-                    </div><div className="col">
+                    </div><div className="col mx-1">
                         {botones[1 + 9 * i]}
-                    </div><div className="col">
+                    </div><div className="col mx-1">
                         {botones[2 + 9 * i]}
-                    </div><div className="col">
+                    </div><div className="col mx-1">
                         {botones[3 + 9 * i]}
-                    </div><div className="col">
+                    </div><div className="col mx-1">
                         {botones[4 + 9 * i]}
-                    </div><div className="col">
+                    </div><div className="col mx-1">
                         {botones[5 + 9 * i]}
-                    </div><div className="col">
+                    </div><div className="col mx-1">
                         {botones[6 + 9 * i]}
-                    </div><div className="col">
+                    </div><div className="col mx-1">
                         {botones[7 + 9 * i]}
-                    </div><div className="col">
+                    </div><div className="col mx-1">
                         {botones[8 + 9 * i]}
                     </div>
                 </div>

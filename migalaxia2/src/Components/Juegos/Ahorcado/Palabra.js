@@ -28,7 +28,11 @@ function Palabra({palabra,teclaPulsada,letrasPermitidas,setCompletado,children})
 
     return (
         <div id="palabra" className="container-fluid text-center fs-4">
-            <span tabIndex={0} className="float-start">{hijos[0]}</span> <span tabIndex={0} aria-label={letras.length + " letras:" + elementoLetras}>{elementoLetras}</span> <span className="float-end">{hijos[1]}</span>
+            <div className="row">
+            <span tabIndex={0} className="float-start col-md">{hijos[0]}</span>
+            <span className="col-md my-4" tabIndex={0} aria-label={letras.length + " letras:" + elementoLetras}>{elementoLetras}</span>
+            <span className="float-end col-md">{hijos[1]}</span>
+            </div>
             {pulsadas.every(e => e)? "¡Has ganado!":""}
         </div>
     );
