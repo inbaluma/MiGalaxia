@@ -31,8 +31,16 @@ function Tecla({tecla, ultima, cambiarTecla, activo = true}) {
             <button className="btn btn-primary w-100" type="button" aria-label={tecla.toLowerCase()} disabled>
                 {tecla}
             </button>
-            )
-        }}
+            );
+        }
+        if (ultima === "FIN") {
+            setBoton(
+            <button className="btn btn-outline-primary w-100" type="button" aria-label={tecla.toLowerCase()} disabled>
+                {tecla}
+            </button>
+            );
+        }
+    }
     ,[ultima]);
 
     return(

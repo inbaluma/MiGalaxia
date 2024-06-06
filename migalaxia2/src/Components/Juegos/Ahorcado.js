@@ -27,7 +27,7 @@ function Ahorcado (){
     ];
     const [teclasDisponibles,setDisponibles] = useState([...alfabetoMayusculas]);
     const [intentos,setIntentos] = useState(maximo);
-    const botonReiniciar = <button aria-label="Reiniciar el juego" className="btn btn-warning" onClick={reiniciar}>
+    const botonReiniciar = <button id="botonReiniciar" aria-label="Reiniciar el juego" className="btn btn-warning" onClick={reiniciar}>
         Reiniciar
     </button>
     const [mensaje,setMensaje] = useState("");
@@ -42,7 +42,9 @@ function Ahorcado (){
             if (!palabra.normalize("NFD").toUpperCase().includes(boton)) { //Si la letra no está en la palabra se pierde un intento
                 console.log(palabra.normalize("NFD").toUpperCase());
                 if (intentos === 1) {
+                    setUltima("FIN");
                     setMensaje(`Fin del juego, la palabra era ${palabra}`);
+                    document.getElementById("botonReiniciar").focus();
                 } else {
                     setMensaje(`${boton} no es correcta`);
                 }
@@ -52,6 +54,7 @@ function Ahorcado (){
             }
         }
         if (completado) {
+            setUltima("FIN");
             setMensaje(`Has ganado, la palabra era ${palabra}`);
         }
     }
@@ -64,7 +67,7 @@ function Ahorcado (){
                 <div className="card mx-3">
                     <div className="card-body">
                         <span tabIndex={0}>Puedes usar el teclado o los botones para jugar</span>
-                        <Palabra palabra={palabra} teclaPulsada={ultimaTecla} letrasPermitidas={alfabetoMayusculas} setCompletado={setCompletado}>
+                        <Palabra palabra={palabra} teclaPulsada={ultimaTecla} letrasPermitidas={alfabetoMayusculas} setCompletado={setCompletado} conIntentos={intentos==0}>
                             <>Intentos: {intentos}</>
                             <>{botonReiniciar}</>
                         </Palabra>
@@ -72,7 +75,7 @@ function Ahorcado (){
                         <div className="row">
                             <Teclado teclasPermitidas={teclasDisponibles} ultimaTecla={ultimaTecla} cambiarTecla={cambiarTecla} setMensaje={setMensaje}/>
                         </div>
-                        <div className="fs-6" aria-live="assertive">
+                        <div className="fs-6" aria-live="assertive" style={{opacity: 0}}>
                             {mensaje}{(intentos > 0 && !completado) && <>, quedan {intentos} intentos.</>}
                         </div>
                     </div>

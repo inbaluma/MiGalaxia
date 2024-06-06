@@ -16,7 +16,7 @@ function Teclado({teclasPermitidas, ultimaTecla, cambiarTecla, setMensaje}) {
     function inicailizarFilas() {
         setFilas([0, 1, 2].map((i) => {
             return (
-                <div className="row gx-1 my-2">
+                <div className="row g-2 my-1">
                     <div className="col mx-1">
                         {botones[0 + 9 * i]}
                     </div><div className="col mx-1">
@@ -46,7 +46,7 @@ function Teclado({teclasPermitidas, ultimaTecla, cambiarTecla, setMensaje}) {
             inicailizarFilas();
         }
         if (ultimaTecla === ""){
-            setMensaje("Pulse una tecla para ver si esta en la palabra");
+            setMensaje("Seleccione el contendio principal para usar el teclado y jugar al ahorcado");
         }
     },[ultimaTecla]);
     return(
