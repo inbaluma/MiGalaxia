@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { useQuery } from "react-query";
+
 import Feedback from "../Feedback";
 import Navigation from "../Navigation";
 import "./Noticia.css";
@@ -8,6 +11,20 @@ function NoticiaCompleta(props) {
 
     document.title = noticia.titulo;
 
+    if (noticia.secciones === null) {
+        console.log("RELLENAR NOTICIA");
+    }
+    /*
+      if (isLoading) {
+        return <span>Loading...</span>;
+      }
+    
+      if (isError) {
+        return <span>Error: {error.message}</span>;
+      }
+    
+      return <div>{JSON.stringify(data)}</div>;
+*/
     let introduccion = <section key="0" children={[]}></section>;
 
     let secciones = <div children={[]}></div>;

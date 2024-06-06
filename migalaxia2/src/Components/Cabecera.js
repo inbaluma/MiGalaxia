@@ -65,8 +65,8 @@ function Cabecera(props) {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         {ul}
                         <form title='Cambiar de tema'>
-                            <select id='temaSelect' onChange={changeMode} className='form-select' title='Tema de la página'>
-                                <option value="1" selected>Modo oscuro</option>
+                            <select id='temaSelect' onChange={changeMode} className='form-select' title='Tema de la página' value={1}>
+                                <option value="1">Modo oscuro</option>
                                 <option value="0">Modo claro</option>
                             </select>
                         </form>

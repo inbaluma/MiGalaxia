@@ -10,9 +10,9 @@ function NoticiasHome(props) {
     <div id="main" role="document" aria-live="polite" aria-relevant="additions">
       <h1 className="titulo">Noticias</h1>
       <div className='row m-2'>
-            {noticias.map(element => {
+            {noticias.map((element, i) => {
                 return (
-                    <NoticiaPreview noticia={element}/>
+                    <NoticiaPreview key={i} noticia={element}/>
                 )
             })}
             <p className='text-secondary-dark'>{noticias.length} noticias mostradas</p>
