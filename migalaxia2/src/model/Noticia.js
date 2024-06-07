@@ -1,28 +1,18 @@
 class Noticia {
 
-    constructor(elemento, secciones) {
-        /*
-        this.id = index;
-        this.titulo = elemento.title;
-        this.img = elemento.image_url;
+    constructor(elemento)
+    {
+        this.id = elemento.id;
+        this.key = elemento.id;
+        this.titulo = elemento.titulo;
+        this.img = elemento.urlImagen;
         this.descripcion_imagen = "";
-        this.enlace = elemento.link;
-        this.enlace_interno = "localhost:3333/noticia/" + index;
-        this.secciones = [{contenido: elemento.description}];
-        */
-        this.id = elemento.IdNoticia;
-        this.key = elemento.IdNoticia;
-        this.titulo = elemento.Titulo;
-        this.img = elemento.UrlImagen;
-        this.descripcion_imagen = "";
-        this.enlace = elemento.Enlace;
-        console.log(secciones);
-        this.secciones = secciones.map((seccion) => {
-            return ({
-                titulo: seccion.Titulo,
-                contenido: seccion.Contenido
-            })
-        })
+        this.enlace = elemento.enlace;
+        this.lang = elemento.lang;
+        this.secciones = [{
+            titulo: "",
+            contenido: elemento.contenido
+        }]
         
         this.state = {
             // 0: neutral, 1: like, -1: dislike

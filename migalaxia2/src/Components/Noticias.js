@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
-
+import axios from 'axios';
 
 import Noticia from '../model/Noticia'
 
@@ -15,28 +15,22 @@ function Noticias() {
 
     const results = async () => {
         if (noticias.length > 0) return;
-        const url = 'https://newsapi.org/v2/top-headlines?'
+        const url1 = 'https://newsapi.org/v2/top-headlines?'
         + 'language=en&'
         + 'category=science&'
         + 'page=1&'
         + 'apiKey=82906c06e30546c59d14ab9aa89ce6cf';
-        const url2 = 'https://saurav.tech/NewsAPI/top-headlines/category/science/us.json'
-        const url3 = 'https://newsdata.io/api/1/news?apikey=pub_4576509abf48207fd36b57982c19f424c423c&q=astronomía%20OR%20galaxia&language=es&category=science,technology';
-        const url4 = 'http://localhost:3333/noticias';
-        const urlSecciones = 'http://localhost:3333/secciones/';
-        let data = await fetch(url4);
-        let parsedData = await data.json();
-        //console.log(parsedData);
-        
-        const articles = [];
-        for(let i = 0; i < parsedData.length; i++) {
-            const element = parsedData[i];
-            data = await fetch(urlSecciones + element.IdNoticia);
-            const secciones = await data.json();
-            articles.push(new Noticia(element, secciones));
+        const url = 'https://migalaxia-backend.vercel.app/api/noticias';
+        const response = await fetch(url, {
+            mode: 'cors'
+        });
+        const _noticias = (await response.json()).noticias;
+        console.log(_noticias);
+        const lista_noticias = [];
+        for(let i = 0; i < _noticias.length; i++) {
+            lista_noticias.push(new Noticia(_noticias[i]));
         }
-        setNoticias(articles);
-        
+        setNoticias(lista_noticias);
     };
 
     useEffect(() => {
