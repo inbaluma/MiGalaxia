@@ -9,10 +9,7 @@ class Noticia {
         this.descripcion_imagen = "";
         this.enlace = elemento.enlace;
         this.lang = elemento.lang;
-        this.secciones = [{
-            titulo: "",
-            contenido: elemento.contenido
-        }]
+        this.secciones = elemento.secciones;
         
         this.state = {
             // 0: neutral, 1: like, -1: dislike

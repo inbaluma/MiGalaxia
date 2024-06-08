@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar sección</title>
+</head>
+<body>
+    <h1>Modificar sección</h1>
+    <p><%=seccion.contenido%></p>
+    <form action="/save/seccion" method="post">
+        <input type="hidden" name="idNoticia" value="<%= idNoticia %>">
+        <input type="hidden" name="idSeccion" value="<%= seccion.id %>">
+        <label>Titulo: </label>
+        <input type="text" name="titulo" value="<%= seccion.titulo %>">
+        <br>
+        <label>Contenido:</label>
+        <input name="contenido" type="text" value="<%= seccion.contenido %>" style="width: 100%;">
+        <br>
+
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

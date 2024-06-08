@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
-import axios from 'axios';
 
 import Noticia from '../model/Noticia'
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar noticia</title>
+</head>
+<body>
+    <h1>Modificar noticia</h1>
+    <h3>Secciones</h3>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Id</td>
+                <th scope="col">Titulo</td>
+                <th scope="col">Contenido</td>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% noticia.secciones.forEach(function(seccion) { %>
+            <tr>
+                <th scope="row"><%= seccion.id %></td>
+                <td><%= seccion.titulo %></td>
+                <td><%= seccion.contenido %></td>
+                <td>
+                    <a href=<%="/modify/seccion/"+ noticia.id + "/" +seccion.id %>>Editar</a>
+                    &nbsp;
+                    <a href=<%="/delete/seccion/"+ noticia.id + "/" +seccion.id %>>Borrar</a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <a href=<%="/new/seccion/"+noticia.id%>>Nueva sección</a>
+    <h3>Contenido original</h3>
+    <p><%= noticia.contenido %></p>
+</body>
+</html>
