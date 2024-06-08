@@ -39,7 +39,7 @@ function NoticiaCompleta(props) {
                         <p>{seccion.contenido}</p>
                     </>)
                 })}
-                <a href={noticia.enlace}>Enlace a la noticia original</a>
+                <a className="link-secondary" href={noticia.enlace}>Enlace a la noticia original</a>
             </article>
             <hr/>
             <div aria-live="polite" aria-relevant="additions">
