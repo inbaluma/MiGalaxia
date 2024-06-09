@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MiGalaxia/static/css/main.60942829.css",
-    "main.js": "/MiGalaxia/static/js/main.5c9915cf.js",
+    "main.css": "/MiGalaxia/static/css/main.4040882c.css",
+    "main.js": "/MiGalaxia/static/js/main.84e56629.js",
     "static/media/Venus.jpg": "/MiGalaxia/static/media/Venus.768f00c89eb008edad89.jpg",
     "static/media/Mars.jpg": "/MiGalaxia/static/media/Mars.8c41dd72aa193556da94.jpg",
     "static/media/sun.jpg": "/MiGalaxia/static/media/sun.648023525b6143b215bc.jpg",
@@ -12,12 +12,16 @@
     "static/media/Jupiter.jpg": "/MiGalaxia/static/media/Jupiter.0f23cb49ce6936252678.jpg",
     "static/media/Earth.jpg": "/MiGalaxia/static/media/Earth.127201bec0563481aeda.jpg",
     "static/media/Saturn.jpg": "/MiGalaxia/static/media/Saturn.254e35991cf967a69cab.jpg",
+    "static/media/planetasmemoria.jpg": "/MiGalaxia/static/media/planetasmemoria.afb8b1f9d8799f8c4370.jpg",
+    "static/media/logotrivia.jpg": "/MiGalaxia/static/media/logotrivia.7be0dcfb44fba186c610.jpg",
+    "static/media/pasapalabraEspacio.jpg": "/MiGalaxia/static/media/pasapalabraEspacio.8a852e74a4c15d2c0ff7.jpg",
+    "static/media/fotoAhorcado.png": "/MiGalaxia/static/media/fotoAhorcado.bc616f497f42a3854efb.png",
     "index.html": "/MiGalaxia/index.html",
-    "main.60942829.css.map": "/MiGalaxia/static/css/main.60942829.css.map",
-    "main.5c9915cf.js.map": "/MiGalaxia/static/js/main.5c9915cf.js.map"
+    "main.4040882c.css.map": "/MiGalaxia/static/css/main.4040882c.css.map",
+    "main.84e56629.js.map": "/MiGalaxia/static/js/main.84e56629.js.map"
   },
   "entrypoints": [
-    "static/css/main.60942829.css",
-    "static/js/main.5c9915cf.js"
+    "static/css/main.4040882c.css",
+    "static/js/main.84e56629.js"
   ]
 }
