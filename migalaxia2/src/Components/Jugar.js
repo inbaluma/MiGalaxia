@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import logoTrivia from "./Juegos/logotrivia.jpg";
+import logoAhorcado from "./Juegos/fotoAhorcado.png";
+import logoPasapalabra from "./Juegos/pasapalabraEspacio.jpg";
+import logoMemoria from "./Juegos/planetasmemoria.jpg";
 
 function Juegos() {
 
@@ -11,7 +15,7 @@ function Juegos() {
         <div className="col-12 col-md-6 col-lg-6 mb-3">
           <div className="card text-center">
             <img
-              src="/images/logotrivia.jpg"
+              src={logoTrivia}
               className="card-img-top mx-auto"
               style={{ height: "200px", width: "200px", objectFit: "cover" }}
               alt="Logo del juego Trivia"
@@ -28,7 +32,7 @@ function Juegos() {
         <div className="col-12 col-md-6 col-lg-6 mb-3">
           <div className="card text-center">
             <img
-              src="/images/fotoAhorcado.png"
+              src={logoAhorcado}
               className="card-img-top mx-auto"
               style={{ height: "200px", width: "200px", objectFit: "cover" }}
               alt="Logo del juego Ahorcado"
@@ -45,7 +49,7 @@ function Juegos() {
         <div className="col-12 col-md-6 col-lg-6 mb-3">
           <div className="card text-center">
             <img
-              src="/images/pasapalabraEspacio.jpg"
+              src={logoPasapalabra}
               className="card-img-top mx-auto"
               style={{ height: "200px", width: "200px", objectFit: "cover" }}
               alt="Logo del juego Pasapalabra Espacial"
@@ -62,7 +66,7 @@ function Juegos() {
         <div className="col-12 col-md-6 col-lg-6 mb-3">
           <div className="card text-center">
             <img
-              src="/images/planetasmemoria.jpg"
+              src={logoMemoria}
               className="card-img-top mx-auto"
               style={{ height: "200px", width: "200px", objectFit: "cover" }}
               alt="Logo del juego Memoria Planetaria"
