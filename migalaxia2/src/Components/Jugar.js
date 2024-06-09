@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoTrivia from "./Juegos/logotrivia.jpg";
+import logoTrivia from "./Juegos/logoDefTrivia.png";
 import logoAhorcado from "./Juegos/fotoAhorcado.png";
 import logoPasapalabra from "./Juegos/pasapalabraEspacio.jpg";
 import logoMemoria from "./Juegos/planetasmemoria.jpg";
