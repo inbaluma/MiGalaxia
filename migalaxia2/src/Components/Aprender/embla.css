@@ -32,14 +32,24 @@
   flex-direction: row;
   margin-left: calc(var(--thumbs-slide-spacing) * -1);
 }
+
 .embla-thumbs__slide {
-  flex: 0 0 22%;
+  /* pantallas grandes */
+  flex: 0 0 15%;
   min-width: 0;
   padding-left: var(--thumbs-slide-spacing);
 }
-@media (min-width: 576px) {
+/* pantallas medianas */
+@media (max-width: 768px) {
   .embla-thumbs__slide {
-    flex: 0 0 15%;
+    flex: 0 0 20%;
+  }
+}
+
+/* pantallas pequeñas */
+@media (max-width: 576px) {
+  .embla-thumbs__slide {
+    flex: 0 0 35%;
   }
 }
 .embla-thumbs__slide__number {
